@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hello R Markdown</title>
+    <title>Posts</title>
     <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -20,11 +20,7 @@
 
 
     
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css"
-/>
-<link rel="stylesheet" href="/assets/css/single.css" />
+    <link rel="stylesheet" href="/assets/css/list.css">
 
 
     
@@ -37,9 +33,9 @@
       
     <nav class="navbar navbar-expand-lg top-navbar final-navbar shadow">
     <div class="container">
-      <a class="navbar-brand" href="/posts">
+      <a class="navbar-brand" href="https://rodrigue.netlify.app">
         <img src="/assets/images/logo.png">L&#39;univers de Rodrigue</a>
-      <button class="navbar-toggler navbar-light" type="button" >
+      <button class="navbar-toggler navbar-light" type="button" onclick="toggleSidebar()">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -54,100 +50,77 @@
 
       
       
-<div class="container p-0 read-area">
-  
-  <div class="hero-area col-sm-12" style='background-image: url(/assets/images/default-hero.jpg);'>
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-tree">
+      <input type="text" name="filtr-search" value="" placeholder="Search" data-search="" id="search-box" />
+      <ul class="tree" id="tree">
+        <li id="list-heading"><a href="#" data-filter="all">Posts</a></li>
+        <div class="subtree">
+            
+
+        </div>
+      </ul>
+    </div>
   </div>
-
-  
-  <div class="page-content">
-    <div class="author-profile ml-auto align-self-lg-center">
-      <img class="rounded-circle" src='/assets/images/default-avatar.png'/>
-      <h5 class="author-name">John Doe</h5>
-      <p>July 23, 2015</p>
+  <div class="content container-fluid" id="content">
+    <div class="content-cards">
+      <div class="container-fluid filtr-container post-cards" id="post-cards">
+        
+          <div class="filtr-item" data-category='R'>
+  <a href="/posts/r/htmlwidget/" class="post-card-link">
+    <div class="card">
+      <div class="card-head">
+        <img class="card-img-top" src='/assets/images/default-hero.jpg'/>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Les htmlwidgets</h5>
+        <p class="card-text post-summary">Les htmlwidgets peuvent être utilisés dans tous les formats de travail R (script R, R Markdown et applications Shiny)
+Pour rendre vos visualisations interactives et dynamiques rien de mieux que d’utiliser des librairies JavaScripts. Pourquoi? Parce que JavaScript a été inventé pour dynamiser les sites internet et depuis, plusieurs librairies javascripts ont été développées dans ce sens. Mais ne vous inquiétez pas, vous n’aurez pas besoin de réellement comprendre le langage JavaScript pour en faire dans Rstudio.</p>
+      </div>
+      <div class="card-footer">
+        <span class="float-left">July 5, 2020</span>
+        <a
+        href="/posts/r/htmlwidget/"
+        class="float-right btn btn-outline-info btn-sm"
+        >Read</a
+        >
+      </div>
     </div>
-
-    <div class="title">
-      <h1>Hello R Markdown</h1>
-    </div>
-
-    <div class="post-content" id="post-content">
-      
-
-
-<div id="r-markdown" class="section level1">
-<h1>R Markdown</h1>
-<p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
-<p>You can embed an R code chunk like this:</p>
-<pre class="r"><code>summary(cars)
-##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00
-fit &lt;- lm(dist ~ speed, data = cars)
-fit
-## 
-## Call:
-## lm(formula = dist ~ speed, data = cars)
-## 
-## Coefficients:
-## (Intercept)        speed  
-##     -17.579        3.932</code></pre>
-</div>
-<div id="including-plots" class="section level1">
-<h1>Including Plots</h1>
-<p>You can also embed plots. See Figure <a href="#fig:pie">1</a> for example:</p>
-<pre class="r"><code>par(mar = c(0, 1, 0, 1))
-pie(
-  c(280, 60, 20),
-  c(&#39;Sky&#39;, &#39;Sunny side of pyramid&#39;, &#39;Shady side of pyramid&#39;),
-  col = c(&#39;#0292D8&#39;, &#39;#F7EA39&#39;, &#39;#C4B632&#39;),
-  init.angle = -50, border = NA
-)</code></pre>
-<div class="figure"><span id="fig:pie"></span>
-<img src="/post/2015-07-23-r-rmarkdown_files/figure-html/pie-1.png" alt="A fancy pie chart." width="672" />
-<p class="caption">
-Figure 1: A fancy pie chart.
-</p>
-</div>
+  </a>
 </div>
 
+        
+          <div class="filtr-item" data-category='R'>
+  <a href="/posts/r/rmarkdown/" class="post-card-link">
+    <div class="card">
+      <div class="card-head">
+        <img class="card-img-top" src='/assets/images/default-hero.jpg'/>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">R, Rstudio et Markdown</h5>
+        <p class="card-text post-summary">Les images ne charges pas pour l’instant. Ce sera corrigé asap :)
+Un rapport à rédiger? Un document de travail? Une démonstration interactive? Vous êtes au bon endroit pour apprendre ce qui se fait de mieux avec R.
+Depuis Rstudio vous pouvez créer un éventail de visualisations sous forme de documents (statiques ou dynamiques) markdown.
+Avec Markdown, fini les exports csv pour faire des graphiques dans Excel, fini les Powerpoints avec des mises en formes manuelles et complexes, fini les rapports word…</p>
+      </div>
+      <div class="card-footer">
+        <span class="float-left">July 5, 2020</span>
+        <a
+        href="/posts/r/rmarkdown/"
+        class="float-right btn btn-outline-info btn-sm"
+        >Read</a
+        >
+      </div>
     </div>
+  </a>
+</div>
 
-    
-    
-
-    
-  <hr />
-    <div class="row next-prev-navigator">
-
-
-  
-    
-      
-      <div class="col-md-6 previous-article">
-        <a href="/post/htmlwidget/" class="btn btn-outline-info">
-          <span><i class="fas fa-chevron-circle-left"></i> Prev</span>
-          <br />
-          <span>Les htmlwidgets</span>
-        </a>
+        
+        
       </div>
       
-    
-    
-  
-
-  
-
-</div>
-
-  <hr />
-  
-  
-</div>
+    </div>
+  </div>
 
     </div>
 
@@ -239,12 +212,7 @@ Figure 1: A fancy pie chart.
 
     
     
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
-<script src="/assets/js/single.js"></script>
-<script>
-  hljs.initHighlightingOnLoad();
-</script>
-
+    <script src="/assets/js/list.js"></script>
 
   </body>
 </html>
