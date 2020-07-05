@@ -1,0 +1,244 @@
+---
+title: "R, Rstudio et Markdown"
+author: Rodrigue EDORH
+date: '2020-07-05'
+slug: rmarkdown
+categories: ["R"]
+tags: ["R Markdown"]
+---
+
+<table width="80%" border ="1" cellspacing="1" bordercolor="red" align=center> <tr><td><div align=center> Les images ne charges pas pour l'instant. Ce sera corrigé asap :)  </div></td></tr></table>
+
+<br>
+
+> Un rapport à rédiger? Un document de travail? Une démonstration interactive? Vous êtes au bon endroit pour apprendre ce qui se fait de mieux avec R.
+
+
+<!-- La présentation des résultats est devenue une part très importante dans le métier de _Data Scientists_ (ou d'analyste de manière plus générale). Avec vos données, vous devez pouvoir raconter une histoire. Quoi de mieux que de le faire depuis un environnement qui vous est déjà familié et qui peut directement intégrer vos scripts R. -->
+
+Depuis Rstudio vous pouvez créer un éventail de visualisations sous forme de __documents (statiques ou dynamiques) [markdown](https://fr.wikipedia.org/wiki/Markdown)__. 
+
+Avec Markdown, fini les exports csv pour faire des graphiques dans Excel, fini les Powerpoints avec des mises en formes manuelles et complexes, fini les rapports word...  
+
+
+Markdown est un langage de balisage léger créé en 2004 dont le but est d'offrir une syntaxe facile à lire et à écrire. Grâce à la librairie `Rmarkdown`, vous pouvez faire du markdown dans R.
+
+Grâce à Rmarkdown, vous allez "faire parler" vos données et raconter une histoire depuis un environnement qui vous ai déjà familier et qui peut directement intégrer vos scripts R. 
+
+Il existe plusieurs types de documents markdowns en fonction de votre problématique. 
+
+Nous vous proposons quelques types de documents qui pourraient vous intéressez :
+
++ Les documents Rmarkdowns classiques
++ Les Notebooks
++ Les documents Rmarkdowns interactifs
++ Les dashboards
++ Les présentations
++ Autres types de documents
+
+
+<!-- Il y a un site dédié pour les documments Markdown dans R. Ce site est assez complet. Vous avez des tutoriels écris pour chaque type de document (en bas de la page d'accueil cliquez sur le type de document qui vous intéresse), une galerie (en haut à droite) qui vous montre des documents déjà rédigés et des articles. -->
+
+<!-- [![](image/post-rmarkdown/markdown.PNG "Cliquez pour suivre le lien")](http://rmarkdown.rstudio.com/index.html) -->
+
+
+
+## Les documents RMarkdown classiques {#rmarkdown_classique}
+
+<!-- Un document statique est un document où il n'y a aucune interaction avec l'utilisateur. -->
+
+Un document markdown peut être un document __HTML__, __PDF<a href="#note1" id="note1ref"><sup>1</sup></a>__ ou __WORD__. 
+
+Pour créer un document Rmarkdown il faut aller dans __File > New File > R Markdown__. Il vous affichera cette barre de dialogue.
+
+![](image/post-rmarkdown/firstrmarkdown.PNG)
+
+<br>
+
+Tout en haut à droite, vous pouvez spécifier  le nom du document et le nom de l'auteur. Ensuite en bas à droite vous spécifiez le type de document (HTML, PDF, WORD) puis OK. Il vous créera un fichier avec un exemple comme ceci:
+
+![](image/post-rmarkdown/firstrmarkdown2.PNG)
+
+<br>
+
+Le document comporte une partie entête comportant le titre, l'auteur, la date,... Cette entête doit être à l'l’intérieur de ces symboles "\-\-\-". Vous avez après les options générales des sorties R. il définit comment les scripts R seront traités dans le document. Il vient ensuite le corps du document. 
+Les titres de sections sont préfixés d’un ou plusieurs `#`, selon le niveau de profondeur du titre. Par exemple, pour un titre de niveau 1, on écrira `#` Titre de niveau 1, alors que pour un titre de niveau 2 on écrira ## Titre de niveau 2 (à ne pas confondre avec le symbole de commentaire des scripts R).
+
+L'insertion de blocs R dans un document Rmarkdown, se fait grâce à la synthase: 
+
+\`\`\`{r}
+
+\`\`\`
+
+
+Lorsque vous commencez à écrire votre document markdown, il faut enregistrer le fichier dans votre répertoire. On décide de l'appeler __Premier_Rmarkdown__. Les fichiers Rmarkdown ont pour extension "__.Rmd__".  Pour compiler le document on clique sur le bouton ![](image/post-rmarkdown/knit.PNG). On obtient une sortie Html comme ceci:
+
+![](image/post-rmarkdown/firstrmarkdown3.PNG)
+
+<br>
+
+
+Ce [tutoriel](http://rmarkdown.rstudio.com/html_document_format.html) devrait vous permettre de vous familiariser rapidement à l'univers markdown.
+
+#### Pour aller plus loin
+
+Lisez les [options knitr](https://yihui.name/knitr/options/) pour vous imprégner progressivement avec l’usage de la syntaxe Markdown. Ce tutoriel  disponible sur la page suivante [knitr in a knutshell](http://kbroman.org/knitr_knutshell/) est aussi pas mal.
+
+## Les Notebooks R
+
+Un Notebook R est un document RMarkdown avec des blocs qui peuvent être exécutés indépendamment et de manière interactive. Les sorties sont visibles immédiatement dans le Notebook. Le but d'un R Notebook n'est pas de produire un beau document de présentation; c'est plutôt un document de travail. Il vous permet de travailler et de documenter votre travail.
+
+Le notebook se situe donc entre un pur script R et un Rmarkdown bien élaboré. Il a l'avantage d'être isolé, auto-portant et une exécution plus rapide. 
+
+
+Lorsque vous enregistrez un notebook, un fichier `.nb.html` est créé à côté de celui-ci. Ce fichier est un fichier HTML autonome qui contient à la fois une copie rendue du Notebook avec toutes les sorties de bloc actuelles et une copie du document `.Rmd` lui-même. 
+<!-- Vous pouvez donc partager le fichier `nb.html` qui contiendra -->
+
+Pour créer un R notebook, allez dans __File > New File > R Notebook__
+
+
+![](image/post-rmarkdown/notebook1.png)
+<br>
+
+Comme vous pouvez le remarquer, à la place du __Knit__ d'un Rmarkdown classique vous avez plutôt un __Preview__. Enregistrez le fichier (__mon premier markdown__ par exemple). Un fichier `.nb.html` est créé. 
+
+![](image/post-rmarkdown/notebook2.png)
+
+<br>
+
+En cliquant sur __Preview__ vous ouvrez le fichier `mon premier notebook.nb.html`. Dans le html qui est généré, vous avez en haut à droite le bouton __Code__. Avec ce bouton vous avez la possibilité d'afficher ou de cacher tout votre code. Vous pouvez également télécharger le fichier `.Rmd` associé. 
+
+![](image/post-rmarkdown/notebook3.png)
+<br>
+
+> A Savoir : Le __Preview__ ne compile pas votre notebook. Il restitue votre notebook tel que vous le voyez dans Rstudio sous un format html. Ainsi, un bloc R qui n'a pas été exécuté dans Rstudio ne le sera pas dans la sortie html  
+
+## Les documents Interactifs
+
+R Markdown a été étendu pour prendre en charge des documents interactifs. Vous pouvez désormais créer des documents qui permettent aux utilisateurs de modifier les paramètres sous-jacents à votre analyse et de voir immédiatement les résultats.
+
+
+R Markdown tire parti de Shiny (Voir section [Framework shiny](shiny.html))  pour rendre cela possible. 
+
+Pour créer un document interactif aller dans __File>New File>R Markdown__. 
+
+Dans la barre de gauche choisissez __Shiny__. Donnée un titre à votre document dans __Title__ puis __OK__
+
+ ![](image/post-rmarkdown/mardown_shiny1.png) 
+
+<br>
+
+Un fichier "Untitled.Rmd" est créé. Il faut l'enregistrer puis cliquer sur ![](image/post-rmarkdown/mardown_shiny_run_doc.png).
+
+Vous venez de créer un document interactif inclus par défaut dans R Studio.
+
+ ![](image/post-rmarkdown/mardown_shiny2.png) 
+
+<br>
+
+
+> Pour plus de détails et aller plus loin consulter cette page: [Document Shiny](http://rmarkdown.rstudio.com/authoring_shiny.html) 
+
+## flexdashboard : un Rmarkdown particulier
+
+Avec Rmarkdown, on a la possibilité de faire des documents sous forme de tableau de bord  (dashboard) avec pas mal de possibilité grâce à la librairie `flexdashboard`.
+<!-- produire des graphiques avec des selecteurs; de la cartographie qui intègrent des fonds de carte dynamique, des extraits de tables modulables, intégré des htmlwidgets ou du shiny pour dynamiser les visualisations... __Sympa n'est ce pas__ .  -->
+
+Vous pourrez ainsi : 
+
+  + Créer des groupes de visualisations de données sous forme de tableau de bord.
+
+  + Intégrer une grande variété de composants comme des [htmlwidgets](#les-htmlwidgets), jauges et boîtes de valeur,  des annotations de texte,
+
+  + Configurer facilement l'affichage et  redimensionner les composants intelligemment pour remplir le navigateur et adapter à l'affichage sur les appareils mobiles.
+
+  + Faire de la mise en page sous forme de storyboard pour présenter des séquences de visualisations et des commentaires associés.
+
+  + Utiliser éventuellement Shiny pour dynamiser les visualisations.
+  
+
+Pour créer un flexdashboard, il faut aller dans __File>New file>R Markdown__. Dans la barre de gauche, cliquez sur __From Template__ puis sur __Flex Dashboard__ et __OK__. 
+  
+ ![](image/post-rmarkdown/flexdashboard.png) 
+
+<br>
+Un fichier "Untitled.rmd" est créé. Changer le titre de votre document en ligne 2 en "Mon tableau de bord". Enregistrez le puis compilez le ![](image/post-rmarkdown/knit.PNG). 
+
+Vous devriez avoir ceci : 
+
+ ![](image/post-rmarkdown/flexdashboard2.png) 
+
+<br>
+
+Vous venez de créer un tableau de bord avec une large colonne nommé Chart A a gauche et une petite colonne divisé en deux (Chart B et C). Bien entendu vous pouvez customiser votre tableau de bord comme vous voulez. Référez-vous à  [Using](http://rmarkdown.rstudio.com/flexdashboard/using.html) et [Layout](http://rmarkdown.rstudio.com/flexdashboard/layouts.html) pour voir toutes les possibilités que vous offre `flexdashboard`. 
+
+Vous pouvez également inclure des programmes shiny ([flesdashboard avec shiny](http://rmarkdown.rstudio.com/flexdashboard/shiny.html)) pour les rendre dynamiques ou des htmlwigdgets.
+
+
+
+
+## Les Présentations {#presentation}
+
+Faire vos présentations dans Rstudio peut s'avérer très intéressant et à terme plus pratique pour vous que powerpoint ou beamer.  
+
+Voici quelques avantages de faire vos présentations dans Rstudio :
+
++ Visualisations interactives : tout ce que vous pouvez créer dans R peut être placé dynamiquement dans votre présentation. Cela signifie que tous les graphiques, cartes interactifs, que vous pouvez créer en R peuvent être une partie vivante de votre présentation  - elles permettent des présentations beaucoup plus attrayantes,
+
++    Inclure des résultats et du code facilement et lisible
+
++    Ne nécessite qu'un navigateur pour ouvrir - ne nécessite pas Adobe, Powerpoint, ou toute autre chose
+
++    Garantie que le code que vous avez inclus donne les résultats affichés
+
++    Les options de visualisation ne sont limitées que par ce qui est possible dans R. 
+
+De manière générale, tout ce que vous pouvez faire de dynamiques ([htmlwidgets pour R](htmlwidgets.html), [applis Shiny](shiny.html) peuvent s'intégrer dans votre présentation. Plus besoin de capture d'écran d'un extrait de votre travail... 
+
+
+Pour créer une présentation : __File>New File> R Markdown__. Dans la barre de gauche, cliquez sur __Presentation___. Donnez-lui un nom puis __OK__.
+
+ ![](image/post-rmarkdown/slide.png) 
+
+
+Enregistrez votre fichier puis compilez. 
+
+ ![](image/post-rmarkdown/slide1.png) 
+
+
+<br>
+
+Cette présentation est le format classique. En lisant ce [tutoriel](http://rmarkdown.rstudio.com/ioslides_presentation_format.html), vous devriez être plus à même de customiser vos présentations. 
+
+
+
+> A Savoir : Il existe plusieurs formats de présentations prédéfinis. Trois sont natifs Rmarkdown (ioslide, slidy et beamer).  D'autres librairies sont téléchargeables.  `Revealjs` et `Xaringa` sont deux librairies interréssentes que nous vous conseillons de tester.
+
+
+## Autres
+
+### Tutoriels Interactifs
+
+Vous pouvez depuis R Studio faire des tutoriels interactifs avec des mini-consoles R intégrées dans votre document, des Exercices, des questions-réponses, un questionnaire... 
+
+Il faut suffit d'installer la librairie `learnr` puis d'aller dans __File>New File>R Markdown>From Template__ et choisir __Interactive Tutorial__.
+
+Toute l'aide dont vous aurez besoin est disponible [Interactives tutorials for R](https://rstudio.github.io/learnr/)
+
+
+
+### Les livres
+
+Pouvons-nous écrire un livre dans un format source et générer la sortie dans plusieurs formats? Traditionnellement, les livres sont souvent écrits avec LaTeX ou Microsoft Word. L'un ou l'autre de ces outils fera de l'écriture de livres un voyage à sens unique et vous ne pouvez pas revenir en arrière: si vous choisissez LaTeX, vous finissez généralement avec un document PDF; Si vous travaillez avec Word, il est probable que vous deviez rester dans Word pour toujours et que vous puissiez également manquer les nombreuses fonctionnalités utiles et la belle sortie PDF de LaTeX.
+
+Dans R vous pourrez écrire un livre et l'exporter sous plusieurs formats (html, pdf, word, Epub...). Ceci est exceptionnel n'est-ce pas. D'ailleurs plusieurs livres sur R ont été écris dans R (R for Data Science, R Programming for Data Science, Text Mining with R, ....)
+
+
+Pour faire de même vous aurez besoin de la librairie `bookdown` et de [ce tutoriel](https://bookdown.org/).
+
+### Les sites web
+Vous avez plusieurs documents RMarkdown et vous souhaitez le transformer en site web cohérent?  
+
+Rendez-vous sur [R markdown Websites](http://rmarkdown.rstudio.com/rmarkdown_websites.html).
+
+

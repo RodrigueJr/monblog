@@ -5,21 +5,32 @@
     <link>/categories/r/</link>
     <description>Recent content in R on L&#39;univers de Rodrigue</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 23 Jul 2015 21:13:14 -0500</lastBuildDate>
+    <language>fr-FR</language>
+    <lastBuildDate>Sun, 05 Jul 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Hello R Markdown</title>
-      <link>/post/2015-07-23-r-rmarkdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      <title>Les htmlwidgets</title>
+      <link>/post/htmlwidget/</link>
+      <pubDate>Sun, 05 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/2015-07-23-r-rmarkdown/</guid>
-      <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+      <guid>/post/htmlwidget/</guid>
+      <description>Les htmlwidgets peuvent être utilisés dans tous les formats de travail R (script R, R Markdown et applications Shiny)
+Pour rendre vos visualisations interactives et dynamiques rien de mieux que d’utiliser des librairies JavaScripts. Pourquoi? Parce que JavaScript a été inventé pour dynamiser les sites internet et depuis, plusieurs librairies javascripts ont été développées dans ce sens. Mais ne vous inquiétez pas, vous n’aurez pas besoin de réellement comprendre le langage JavaScript pour en faire dans Rstudio.</description>
+    </item>
+    
+    <item>
+      <title>R, Rstudio et Markdown</title>
+      <link>/post/rmarkdown/</link>
+      <pubDate>Sun, 05 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/rmarkdown/</guid>
+      <description>Les images ne charges pas pour l’instant. Ce sera corrigé asap :)
+Un rapport à rédiger? Un document de travail? Une démonstration interactive? Vous êtes au bon endroit pour apprendre ce qui se fait de mieux avec R.
+Depuis Rstudio vous pouvez créer un éventail de visualisations sous forme de documents (statiques ou dynamiques) markdown.
+Avec Markdown, fini les exports csv pour faire des graphiques dans Excel, fini les Powerpoints avec des mises en formes manuelles et complexes, fini les rapports word…</description>
     </item>
     
   </channel>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hello R Markdown</title>
+    <title>Les htmlwidgets</title>
     <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -64,55 +64,35 @@
     <div class="author-profile ml-auto align-self-lg-center">
       <img class="rounded-circle" src='/assets/images/default-avatar.png'/>
       <h5 class="author-name">John Doe</h5>
-      <p>July 23, 2015</p>
+      <p>July 5, 2020</p>
     </div>
 
     <div class="title">
-      <h1>Hello R Markdown</h1>
+      <h1>Les htmlwidgets</h1>
     </div>
 
     <div class="post-content" id="post-content">
       
 
 
-<div id="r-markdown" class="section level1">
-<h1>R Markdown</h1>
-<p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
-<p>You can embed an R code chunk like this:</p>
-<pre class="r"><code>summary(cars)
-##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00
-fit &lt;- lm(dist ~ speed, data = cars)
-fit
-## 
-## Call:
-## lm(formula = dist ~ speed, data = cars)
-## 
-## Coefficients:
-## (Intercept)        speed  
-##     -17.579        3.932</code></pre>
-</div>
-<div id="including-plots" class="section level1">
-<h1>Including Plots</h1>
-<p>You can also embed plots. See Figure <a href="#fig:pie">1</a> for example:</p>
-<pre class="r"><code>par(mar = c(0, 1, 0, 1))
-pie(
-  c(280, 60, 20),
-  c(&#39;Sky&#39;, &#39;Sunny side of pyramid&#39;, &#39;Shady side of pyramid&#39;),
-  col = c(&#39;#0292D8&#39;, &#39;#F7EA39&#39;, &#39;#C4B632&#39;),
-  init.angle = -50, border = NA
-)</code></pre>
-<div class="figure"><span id="fig:pie"></span>
-<img src="/post/2015-07-23-r-rmarkdown_files/figure-html/pie-1.png" alt="A fancy pie chart." width="672" />
-<p class="caption">
-Figure 1: A fancy pie chart.
-</p>
-</div>
+<blockquote>
+<p><strong>Les htmlwidgets peuvent être utilisés dans tous les formats de travail R (script R, R Markdown et applications Shiny)</strong></p>
+</blockquote>
+<p>Pour rendre vos visualisations interactives et dynamiques rien de mieux que d’utiliser des librairies JavaScripts. <strong>Pourquoi?</strong> Parce que JavaScript a été inventé pour dynamiser les sites internet et depuis, plusieurs librairies javascripts ont été développées dans ce sens. Mais ne vous inquiétez pas, vous n’aurez pas besoin de réellement comprendre le langage JavaScript pour en faire dans Rstudio. C’est là qu’intervient les <strong>htmlwidgets pour R</strong>.</p>
+<p>Les widgets HTML pour R sont des petites interfaces développées sous JavaScript qui vont vous permettre de faire des graphiques interactifs. Ils fonctionnent exactement comme les graphiques R, sauf qu’ils produisent des visualisations Web interactives. Une ligne ou deux de code R et voilà votre document plus beau avec un effet <strong>“Waouh”</strong>.</p>
+<p>Voici quelques librairies JavaScripts dans R:</p>
+<ul>
+<li><p><strong>leaflet</strong> : bibliothèque JavaScript permettant de créer des cartes dynamiques prenant en charge le panoramique et le zoom, ainsi que diverses annotations, telles que des marqueurs, des polygones et des fenêtres contextuelles. Plus d’info <a href="http://www.htmlwidgets.org/showcase_leaflet.html">ici</a></p></li>
+<li><p><strong>dygraph</strong> : elle offre de riches fonctions de représentation des données de séries temporelles dans R et inclut la prise en charge de nombreuses fonctions interactives, notamment la mise en surbrillance de séries / points, le zoom et le panoramique. Plus d’info <a href="http://www.htmlwidgets.org/showcase_dygraphs.html">ici</a></p></li>
+<li><p><strong>plotly</strong> : elle vous permet de traduire facilement vos graphiques ggplot2 en une version Web interactive. Il s’utilise en combinaison avec <code>ggplot2</code>. Plus d’info <a href="http://www.htmlwidgets.org/showcase_plotly.html">ici</a></p></li>
+<li><p><strong>DT</strong>: elle vous permet d’afficher les données R en tant que tables HTML interactives prenant en charge le filtrage, la pagination et le tri. Plus d’info <a href="http://www.htmlwidgets.org/showcase_datatables.html">ici</a></p></li>
+</ul>
+<p>Vous trouverez plus de librairies Javascript dans R <a href="http://www.htmlwidgets.org/showcase_leaflet.html">ici</a> et une galerie des widgets sur <a href="http://gallery.htmlwidgets.org/">htmlwidgets.org</a>.</p>
+<p>Vous pourrez créer vous-même un Htmlwigdet pour R avec la librairie <code>htmlwidgets</code>.</p>
+<div id="les-crosstalk" class="section level2">
+<h2>Les Crosstalk</h2>
+<p>Un crosstalk est un add-on des htmlwidgets. Il étend htmlwidgets avec un ensemble de classes, de fonctions et de conventions pour implémenter des interactions inter-widget.</p>
+<p>Plus d’info <a href="http://rstudio.github.io/crosstalk/index.html">ici</a></p>
 </div>
 
     </div>
@@ -127,16 +107,18 @@ Figure 1: A fancy pie chart.
 
   
     
-      
-      <div class="col-md-6 previous-article">
-        <a href="/post/htmlwidget/" class="btn btn-outline-info">
-          <span><i class="fas fa-chevron-circle-left"></i> Prev</span>
-          <br />
-          <span>Les htmlwidgets</span>
-        </a>
-      </div>
-      
     
+      
+        
+        
+        <div class="col-md-12 next-article">
+          <a href="/post/rmarkdown/" class="btn btn-outline-info">
+            <span>Next <i class="fas fa-chevron-circle-right"></i></span>
+            <br />
+            <span>R, Rstudio et Markdown</span>
+          </a>
+        </div>
+      
     
   
 

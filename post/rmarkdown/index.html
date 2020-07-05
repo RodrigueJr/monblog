@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>R, Rstudio et Markdown</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/navbar.css" />
+
+
+<link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+
+
+<link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+
+
+    
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css"
+/>
+<link rel="stylesheet" href="/assets/css/single.css" />
+
+
+    
+    
+  </head>
+
+  <body>
+    <div class="container-fluid bg-dimmed wrapper">
+      
+      
+    <nav class="navbar navbar-expand-lg top-navbar final-navbar shadow">
+    <div class="container">
+      <a class="navbar-brand" href="/posts">
+        <img src="/assets/images/logo.png">L&#39;univers de Rodrigue</a>
+      <button class="navbar-toggler navbar-light" type="button" >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="top-nav-items">
+        <ul class="navbar-nav ml-auto">
+        </ul>
+      </div>
+    </div>
+</nav>
+
+
+
+      
+      
+<div class="container p-0 read-area">
+  
+  <div class="hero-area col-sm-12" style='background-image: url(/assets/images/default-hero.jpg);'>
+  </div>
+
+  
+  <div class="page-content">
+    <div class="author-profile ml-auto align-self-lg-center">
+      <img class="rounded-circle" src='/assets/images/default-avatar.png'/>
+      <h5 class="author-name">John Doe</h5>
+      <p>July 5, 2020</p>
+    </div>
+
+    <div class="title">
+      <h1>R, Rstudio et Markdown</h1>
+    </div>
+
+    <div class="post-content" id="post-content">
+      
+
+
+<table width="80%" border="1" cellspacing="1" bordercolor="red" align="center">
+<tr>
+<td>
+<div align="center">
+Les images ne charges pas pour l’instant. Ce sera corrigé asap :)
+</div>
+</td>
+</tr>
+</table>
+<p><br></p>
+<blockquote>
+<p>Un rapport à rédiger? Un document de travail? Une démonstration interactive? Vous êtes au bon endroit pour apprendre ce qui se fait de mieux avec R.</p>
+</blockquote>
+<!-- La présentation des résultats est devenue une part très importante dans le métier de _Data Scientists_ (ou d'analyste de manière plus générale). Avec vos données, vous devez pouvoir raconter une histoire. Quoi de mieux que de le faire depuis un environnement qui vous est déjà familié et qui peut directement intégrer vos scripts R. -->
+<p>Depuis Rstudio vous pouvez créer un éventail de visualisations sous forme de <strong>documents (statiques ou dynamiques) <a href="https://fr.wikipedia.org/wiki/Markdown">markdown</a></strong>.</p>
+<p>Avec Markdown, fini les exports csv pour faire des graphiques dans Excel, fini les Powerpoints avec des mises en formes manuelles et complexes, fini les rapports word…</p>
+<p>Markdown est un langage de balisage léger créé en 2004 dont le but est d’offrir une syntaxe facile à lire et à écrire. Grâce à la librairie <code>Rmarkdown</code>, vous pouvez faire du markdown dans R.</p>
+<p>Grâce à Rmarkdown, vous allez “faire parler” vos données et raconter une histoire depuis un environnement qui vous ai déjà familier et qui peut directement intégrer vos scripts R.</p>
+<p>Il existe plusieurs types de documents markdowns en fonction de votre problématique.</p>
+<p>Nous vous proposons quelques types de documents qui pourraient vous intéressez :</p>
+<ul>
+<li>Les documents Rmarkdowns classiques</li>
+<li>Les Notebooks</li>
+<li>Les documents Rmarkdowns interactifs</li>
+<li>Les dashboards</li>
+<li>Les présentations</li>
+<li>Autres types de documents</li>
+</ul>
+<!-- Il y a un site dédié pour les documments Markdown dans R. Ce site est assez complet. Vous avez des tutoriels écris pour chaque type de document (en bas de la page d'accueil cliquez sur le type de document qui vous intéresse), une galerie (en haut à droite) qui vous montre des documents déjà rédigés et des articles. -->
+<!-- [![](image/post-rmarkdown/markdown.PNG "Cliquez pour suivre le lien")](http://rmarkdown.rstudio.com/index.html) -->
+<div id="rmarkdown_classique" class="section level2">
+<h2>Les documents RMarkdown classiques</h2>
+<!-- Un document statique est un document où il n'y a aucune interaction avec l'utilisateur. -->
+<p>Un document markdown peut être un document <strong>HTML</strong>, <strong>PDF<a href="#note1" id="note1ref"><sup>1</sup></a></strong> ou <strong>WORD</strong>.</p>
+<p>Pour créer un document Rmarkdown il faut aller dans <strong>File &gt; New File &gt; R Markdown</strong>. Il vous affichera cette barre de dialogue.</p>
+<p><img src="image/post-rmarkdown/firstrmarkdown.PNG" /></p>
+<p><br></p>
+<p>Tout en haut à droite, vous pouvez spécifier le nom du document et le nom de l’auteur. Ensuite en bas à droite vous spécifiez le type de document (HTML, PDF, WORD) puis OK. Il vous créera un fichier avec un exemple comme ceci:</p>
+<p><img src="image/post-rmarkdown/firstrmarkdown2.PNG" /></p>
+<p><br></p>
+<p>Le document comporte une partie entête comportant le titre, l’auteur, la date,… Cette entête doit être à l’l’intérieur de ces symboles “---”. Vous avez après les options générales des sorties R. il définit comment les scripts R seront traités dans le document. Il vient ensuite le corps du document.
+Les titres de sections sont préfixés d’un ou plusieurs <code>#</code>, selon le niveau de profondeur du titre. Par exemple, pour un titre de niveau 1, on écrira <code>#</code> Titre de niveau 1, alors que pour un titre de niveau 2 on écrira ## Titre de niveau 2 (à ne pas confondre avec le symbole de commentaire des scripts R).</p>
+<p>L’insertion de blocs R dans un document Rmarkdown, se fait grâce à la synthase:</p>
+<p>```{r}</p>
+<p>```</p>
+<p>Lorsque vous commencez à écrire votre document markdown, il faut enregistrer le fichier dans votre répertoire. On décide de l’appeler <strong>Premier_Rmarkdown</strong>. Les fichiers Rmarkdown ont pour extension “<strong>.Rmd</strong>”. Pour compiler le document on clique sur le bouton <img src="image/post-rmarkdown/knit.PNG" />. On obtient une sortie Html comme ceci:</p>
+<p><img src="image/post-rmarkdown/firstrmarkdown3.PNG" /></p>
+<p><br></p>
+<p>Ce <a href="http://rmarkdown.rstudio.com/html_document_format.html">tutoriel</a> devrait vous permettre de vous familiariser rapidement à l’univers markdown.</p>
+<div id="pour-aller-plus-loin" class="section level4">
+<h4>Pour aller plus loin</h4>
+<p>Lisez les <a href="https://yihui.name/knitr/options/">options knitr</a> pour vous imprégner progressivement avec l’usage de la syntaxe Markdown. Ce tutoriel disponible sur la page suivante <a href="http://kbroman.org/knitr_knutshell/">knitr in a knutshell</a> est aussi pas mal.</p>
+</div>
+</div>
+<div id="les-notebooks-r" class="section level2">
+<h2>Les Notebooks R</h2>
+<p>Un Notebook R est un document RMarkdown avec des blocs qui peuvent être exécutés indépendamment et de manière interactive. Les sorties sont visibles immédiatement dans le Notebook. Le but d’un R Notebook n’est pas de produire un beau document de présentation; c’est plutôt un document de travail. Il vous permet de travailler et de documenter votre travail.</p>
+<p>Le notebook se situe donc entre un pur script R et un Rmarkdown bien élaboré. Il a l’avantage d’être isolé, auto-portant et une exécution plus rapide.</p>
+<p>Lorsque vous enregistrez un notebook, un fichier <code>.nb.html</code> est créé à côté de celui-ci. Ce fichier est un fichier HTML autonome qui contient à la fois une copie rendue du Notebook avec toutes les sorties de bloc actuelles et une copie du document <code>.Rmd</code> lui-même.
+<!-- Vous pouvez donc partager le fichier `nb.html` qui contiendra --></p>
+<p>Pour créer un R notebook, allez dans <strong>File &gt; New File &gt; R Notebook</strong></p>
+<p><img src="image/post-rmarkdown/notebook1.png" />
+<br></p>
+<p>Comme vous pouvez le remarquer, à la place du <strong>Knit</strong> d’un Rmarkdown classique vous avez plutôt un <strong>Preview</strong>. Enregistrez le fichier (<strong>mon premier markdown</strong> par exemple). Un fichier <code>.nb.html</code> est créé.</p>
+<p><img src="image/post-rmarkdown/notebook2.png" /></p>
+<p><br></p>
+<p>En cliquant sur <strong>Preview</strong> vous ouvrez le fichier <code>mon premier notebook.nb.html</code>. Dans le html qui est généré, vous avez en haut à droite le bouton <strong>Code</strong>. Avec ce bouton vous avez la possibilité d’afficher ou de cacher tout votre code. Vous pouvez également télécharger le fichier <code>.Rmd</code> associé.</p>
+<p><img src="image/post-rmarkdown/notebook3.png" />
+<br></p>
+<blockquote>
+<p>A Savoir : Le <strong>Preview</strong> ne compile pas votre notebook. Il restitue votre notebook tel que vous le voyez dans Rstudio sous un format html. Ainsi, un bloc R qui n’a pas été exécuté dans Rstudio ne le sera pas dans la sortie html</p>
+</blockquote>
+</div>
+<div id="les-documents-interactifs" class="section level2">
+<h2>Les documents Interactifs</h2>
+<p>R Markdown a été étendu pour prendre en charge des documents interactifs. Vous pouvez désormais créer des documents qui permettent aux utilisateurs de modifier les paramètres sous-jacents à votre analyse et de voir immédiatement les résultats.</p>
+<p>R Markdown tire parti de Shiny (Voir section <a href="shiny.html">Framework shiny</a>) pour rendre cela possible.</p>
+<p>Pour créer un document interactif aller dans <strong>File&gt;New File&gt;R Markdown</strong>.</p>
+<p>Dans la barre de gauche choisissez <strong>Shiny</strong>. Donnée un titre à votre document dans <strong>Title</strong> puis <strong>OK</strong></p>
+<p><img src="image/post-rmarkdown/mardown_shiny1.png" /></p>
+<p><br></p>
+<p>Un fichier “Untitled.Rmd” est créé. Il faut l’enregistrer puis cliquer sur <img src="image/post-rmarkdown/mardown_shiny_run_doc.png" />.</p>
+<p>Vous venez de créer un document interactif inclus par défaut dans R Studio.</p>
+<p><img src="image/post-rmarkdown/mardown_shiny2.png" /></p>
+<p><br></p>
+<blockquote>
+<p>Pour plus de détails et aller plus loin consulter cette page: <a href="http://rmarkdown.rstudio.com/authoring_shiny.html">Document Shiny</a></p>
+</blockquote>
+</div>
+<div id="flexdashboard-un-rmarkdown-particulier" class="section level2">
+<h2>flexdashboard : un Rmarkdown particulier</h2>
+<p>Avec Rmarkdown, on a la possibilité de faire des documents sous forme de tableau de bord (dashboard) avec pas mal de possibilité grâce à la librairie <code>flexdashboard</code>.
+<!-- produire des graphiques avec des selecteurs; de la cartographie qui intègrent des fonds de carte dynamique, des extraits de tables modulables, intégré des htmlwidgets ou du shiny pour dynamiser les visualisations... __Sympa n'est ce pas__ .  --></p>
+<p>Vous pourrez ainsi :</p>
+<ul>
+<li><p>Créer des groupes de visualisations de données sous forme de tableau de bord.</p></li>
+<li><p>Intégrer une grande variété de composants comme des <a href="#les-htmlwidgets">htmlwidgets</a>, jauges et boîtes de valeur, des annotations de texte,</p></li>
+<li><p>Configurer facilement l’affichage et redimensionner les composants intelligemment pour remplir le navigateur et adapter à l’affichage sur les appareils mobiles.</p></li>
+<li><p>Faire de la mise en page sous forme de storyboard pour présenter des séquences de visualisations et des commentaires associés.</p></li>
+<li><p>Utiliser éventuellement Shiny pour dynamiser les visualisations.</p></li>
+</ul>
+<p>Pour créer un flexdashboard, il faut aller dans <strong>File&gt;New file&gt;R Markdown</strong>. Dans la barre de gauche, cliquez sur <strong>From Template</strong> puis sur <strong>Flex Dashboard</strong> et <strong>OK</strong>.</p>
+<p><img src="image/post-rmarkdown/flexdashboard.png" /></p>
+<p><br>
+Un fichier “Untitled.rmd” est créé. Changer le titre de votre document en ligne 2 en “Mon tableau de bord”. Enregistrez le puis compilez le <img src="image/post-rmarkdown/knit.PNG" />.</p>
+<p>Vous devriez avoir ceci :</p>
+<p><img src="image/post-rmarkdown/flexdashboard2.png" /></p>
+<p><br></p>
+<p>Vous venez de créer un tableau de bord avec une large colonne nommé Chart A a gauche et une petite colonne divisé en deux (Chart B et C). Bien entendu vous pouvez customiser votre tableau de bord comme vous voulez. Référez-vous à <a href="http://rmarkdown.rstudio.com/flexdashboard/using.html">Using</a> et <a href="http://rmarkdown.rstudio.com/flexdashboard/layouts.html">Layout</a> pour voir toutes les possibilités que vous offre <code>flexdashboard</code>.</p>
+<p>Vous pouvez également inclure des programmes shiny (<a href="http://rmarkdown.rstudio.com/flexdashboard/shiny.html">flesdashboard avec shiny</a>) pour les rendre dynamiques ou des htmlwigdgets.</p>
+</div>
+<div id="presentation" class="section level2">
+<h2>Les Présentations</h2>
+<p>Faire vos présentations dans Rstudio peut s’avérer très intéressant et à terme plus pratique pour vous que powerpoint ou beamer.</p>
+<p>Voici quelques avantages de faire vos présentations dans Rstudio :</p>
+<ul>
+<li><p>Visualisations interactives : tout ce que vous pouvez créer dans R peut être placé dynamiquement dans votre présentation. Cela signifie que tous les graphiques, cartes interactifs, que vous pouvez créer en R peuvent être une partie vivante de votre présentation - elles permettent des présentations beaucoup plus attrayantes,</p></li>
+<li><p>Inclure des résultats et du code facilement et lisible</p></li>
+<li><p>Ne nécessite qu’un navigateur pour ouvrir - ne nécessite pas Adobe, Powerpoint, ou toute autre chose</p></li>
+<li><p>Garantie que le code que vous avez inclus donne les résultats affichés</p></li>
+<li><p>Les options de visualisation ne sont limitées que par ce qui est possible dans R.</p></li>
+</ul>
+<p>De manière générale, tout ce que vous pouvez faire de dynamiques (<a href="htmlwidgets.html">htmlwidgets pour R</a>, <a href="shiny.html">applis Shiny</a> peuvent s’intégrer dans votre présentation. Plus besoin de capture d’écran d’un extrait de votre travail…</p>
+<p>Pour créer une présentation : <strong>File&gt;New File&gt; R Markdown</strong>. Dans la barre de gauche, cliquez sur <strong>Presentation</strong>_. Donnez-lui un nom puis <strong>OK</strong>.</p>
+<p><img src="image/post-rmarkdown/slide.png" /></p>
+<p>Enregistrez votre fichier puis compilez.</p>
+<p><img src="image/post-rmarkdown/slide1.png" /></p>
+<p><br></p>
+<p>Cette présentation est le format classique. En lisant ce <a href="http://rmarkdown.rstudio.com/ioslides_presentation_format.html">tutoriel</a>, vous devriez être plus à même de customiser vos présentations.</p>
+<blockquote>
+<p>A Savoir : Il existe plusieurs formats de présentations prédéfinis. Trois sont natifs Rmarkdown (ioslide, slidy et beamer). D’autres librairies sont téléchargeables. <code>Revealjs</code> et <code>Xaringa</code> sont deux librairies interréssentes que nous vous conseillons de tester.</p>
+</blockquote>
+</div>
+<div id="autres" class="section level2">
+<h2>Autres</h2>
+<div id="tutoriels-interactifs" class="section level3">
+<h3>Tutoriels Interactifs</h3>
+<p>Vous pouvez depuis R Studio faire des tutoriels interactifs avec des mini-consoles R intégrées dans votre document, des Exercices, des questions-réponses, un questionnaire…</p>
+<p>Il faut suffit d’installer la librairie <code>learnr</code> puis d’aller dans <strong>File&gt;New File&gt;R Markdown&gt;From Template</strong> et choisir <strong>Interactive Tutorial</strong>.</p>
+<p>Toute l’aide dont vous aurez besoin est disponible <a href="https://rstudio.github.io/learnr/">Interactives tutorials for R</a></p>
+</div>
+<div id="les-livres" class="section level3">
+<h3>Les livres</h3>
+<p>Pouvons-nous écrire un livre dans un format source et générer la sortie dans plusieurs formats? Traditionnellement, les livres sont souvent écrits avec LaTeX ou Microsoft Word. L’un ou l’autre de ces outils fera de l’écriture de livres un voyage à sens unique et vous ne pouvez pas revenir en arrière: si vous choisissez LaTeX, vous finissez généralement avec un document PDF; Si vous travaillez avec Word, il est probable que vous deviez rester dans Word pour toujours et que vous puissiez également manquer les nombreuses fonctionnalités utiles et la belle sortie PDF de LaTeX.</p>
+<p>Dans R vous pourrez écrire un livre et l’exporter sous plusieurs formats (html, pdf, word, Epub…). Ceci est exceptionnel n’est-ce pas. D’ailleurs plusieurs livres sur R ont été écris dans R (R for Data Science, R Programming for Data Science, Text Mining with R, ….)</p>
+<p>Pour faire de même vous aurez besoin de la librairie <code>bookdown</code> et de <a href="https://bookdown.org/">ce tutoriel</a>.</p>
+</div>
+<div id="les-sites-web" class="section level3">
+<h3>Les sites web</h3>
+<p>Vous avez plusieurs documents RMarkdown et vous souhaitez le transformer en site web cohérent?</p>
+<p>Rendez-vous sur <a href="http://rmarkdown.rstudio.com/rmarkdown_websites.html">R markdown Websites</a>.</p>
+</div>
+</div>
+
+    </div>
+
+    
+    
+
+    
+  <hr />
+    <div class="row next-prev-navigator">
+
+
+  
+
+  
+    
+      
+      <div class="col-md-6 previous-article">
+        <a href="/post/htmlwidget/" class="btn btn-outline-info">
+          <span><i class="fas fa-chevron-circle-left"></i> Prev</span>
+          <br />
+          <span>Les htmlwidgets</span>
+        </a>
+      </div>
+      
+    
+    
+  
+
+</div>
+
+  <hr />
+  
+  
+</div>
+
+    </div>
+
+    <footer class="container-fluid text-center align-content-center footer pb-2">
+  <div class="container pt-5">
+    <div class="row text-left">
+      <div class="col-md-4 col-sm-12">
+        <h5>Navigation</h5>
+        
+        <ul>
+            
+            <li class="nav-item">
+              <a class="smooth-scroll" href="#about">About</a>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="smooth-scroll" href="#experiences">Experiences</a>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="smooth-scroll" href="#recent-posts">Recent Posts</a>
+            </li>
+            
+            
+        </ul>
+        
+
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <h5>Contact Me</h5>
+        <ul>
+          
+        </ul>
+      </div>
+      <div class="col-md-4 col-sm-12">
+        
+        <p>Stay up to date with email notification</p>
+        <form>
+          <div class="form-group">
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+            />
+            <small id="emailHelp" class="form-text text-muted"
+              >We'll never share your email with anyone else.</small
+            >
+          </div>
+          <button type="submit" class="btn btn-info">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <hr />
+  <div class="container">
+    <div class="row text-left">
+      <div class="col-md-4">
+        <a id="theme" href="https://github.com/hossainemruz/toha" target="#">
+          <img src="/assets/images/logo-inverted.png">
+          Toha
+        </a>
+      </div>
+      <div class="col-md-4">© 2020 Copyright.</div>
+      <div class="col-md-4">
+        Powered by <a href="https://gohugo.io/">Hugo
+        <img
+          src="/assets/images/hugo-logo-wide.svg"
+          alt="Hugo Logo"
+          height="18"
+        />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script src="/assets/js/jquery-3.4.1.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+
+<script src="/assets/js/navbar.js"></script>
+<script src="/assets/js/jquery.filterizr.min.js"></script>
+
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script src="/assets/js/single.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
+
+  </body>
+</html>
