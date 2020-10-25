@@ -18,6 +18,11 @@
   </url>
   
   <url>
+    <loc>https://rodrigue.netlify.app/posts/r/tidyverse/</loc>
+    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://rodrigue.netlify.app/posts/r/encoding/</loc>
     <lastmod>2020-10-25T00:00:00+00:00</lastmod>
   </url>
@@ -65,11 +70,6 @@
                 hreflang="fr"
                 href="https://rodrigue.netlify.app/tags/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://rodrigue.netlify.app/posts/r/ti/</loc>
-    <lastmod>2020-07-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>

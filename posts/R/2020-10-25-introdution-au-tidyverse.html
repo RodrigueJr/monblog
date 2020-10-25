@@ -1,0 +1,95 @@
+---
+title: "Introdution au Tidyverse"
+author: Rodrigue EDORH
+date: 2020-10-25
+slug: tidyverse
+categories: ["R"]
+tags: ["R Markdown"]
+---
+
+
+
+<blockquote>
+<p>Tidyverse, j’utiliserai…</p>
+</blockquote>
+<p>R étant un logiciel libre et flexible, il y a pas mal de librairies qui ont été développés, dès fois pour résoudre le même problème. Pour éviter d’aller dans tous les sens et de s’y perdre finalement, Je vous propose de suivre un ensemble cohérent de librairies regrouper dans une “<strong>méga</strong>” librairie nommé <code>tidyverse</code>. Cette méga librairie contient <strong>26</strong> librairies (la liste complète <a href="debuterRstudio.html#les_packages_r">ici</a>) dont voici les 7 principales:</p>
+<ul>
+<li><code>dplyr</code> : manipulation des données,</li>
+<li><code>readr</code> : lecture et écriture de fichier,</li>
+<li><code>tidyr</code> : transformation des données,</li>
+<li><code>tibble</code>: est une ré-imagination moderne et plus efficiente des <code>dataframe</code> native dans R,</li>
+<li><code>purrr</code> : permet la programmation fonctionnelle,</li>
+<li><code>ggplot2</code> : représentation graphiques des données,</li>
+<li><code>stringr</code> : manipulation de caractères.</li>
+</ul>
+<p>La plupart des nouvelles librairies se base sur ces sept, notamment les librairies qui permettent de travailler sur des bases de données distantes ou de la cartographie).</p>
+<p>Pour mieux entrer dans cet univers n’hésitez pas à aller visiter leur <a href="https://www.tidyverse.org/">site</a>. Il existe aussi un très bon livre (R for Data Science) qui revient sur tous ces aspects. Vous trouverez la version gratuite en ligne <a href="http://r4ds.had.co.nz/">ici</a>.</p>
+<div id="transformation-et-manipulation-des-données" class="section level1">
+<h1>Transformation et manipulation des données</h1>
+<p>La transformation et la manipulation de données se font grâce aux librairies <code>dplyr</code> et <code>tidyr</code>.</p>
+<p>La librairie <code>dplyr</code> est la librairie au centre de l’univers <strong>tidyverse</strong>. Il est indispensable de maitriser cette librairie. Presque toutes les autres librairies de tidyverse l’utilisent.</p>
+<p>Cet aide-mémoire vous permet de comprendre rapidement son utilisation et de connaitre les principales fonctions.</p>
+<p><a href="https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf"><img src="/images/tidy/dplyr.png" /></a></p>
+<p><br>
+Pour bien comprendre le concept du <strong>pipe operator</strong> (%&gt;%) utilisez dans dplyr lisez ceci :</p>
+<p><a href="http://r4ds.had.co.nz/pipes.html"><img src="/images/tidy/pipe2.png" title="Cliquez pour suivre le lien" /></a></p>
+</div>
+<div id="limportation-de-données" class="section level1">
+<h1>L’importation de données</h1>
+<p>Comme évoquer précédemment nous allons travailler autour des librairies contenues dans <code>tidyverse</code>. Chargeons cette librairie.</p>
+<pre class="r"><code>library(tidyverse)</code></pre>
+<!-- ![](https://www.rstudio.com/wp-content/uploads/2015/01/data-import-cheatsheet-1-400x309.png) -->
+<p>Pour importer un fichier csv par exemple, on utilise la fonction <code>read_csv</code> de la librairie <code>readr</code>.</p>
+<p>L’aide-mémoire ci-dessous vous donne plus de détail sur l’importation.</p>
+<!-- ![](www/pdf/data-import.pdf){#id .class width=100% height=500}  -->
+<p><a href="http://r4ds.had.co.nz/data-import.html"><img src="/images/tidy/data_import.PNG" /></a></p>
+<p>Ce Chapitre du document <strong>R for data Science</strong> peut être aussi utile.</p>
+<p><a href="http://r4ds.had.co.nz/data-import.html"><img src="/images/tidy/import2.png" title="Cliquez pour suivre le lien" /></a></p>
+</div>
+<div id="traitement-des-caractères" class="section level1">
+<h1>Traitement des caractères</h1>
+<p>La libraire <code>stringr</code> traite de manière générale les caractères et plus spécialement les <a href="https://fr.wikipedia.org/wiki/Expression_r%C3%A9guli%C3%A8re">expressions régulières</a>.
+Ce chapitre devrait vous permettre de mieux comprendre cette librairie:</p>
+<p><a href="http://r4ds.had.co.nz/strings.html"><img src="/images/tidy/regex.png" title="Cliquez pour suivre le lien" /></a></p>
+<p>Cet aide-mémoire peut vous être utile:</p>
+<p><a href="https://github.com/rstudio/cheatsheets/raw/master/strings.pdf"><img src="/images/tidy/stringr.png" title="Cliquez pour suivre le lien" /></a></p>
+</div>
+<div id="une-évolution-des-dataframe-tibbledata" class="section level1">
+<h1>Une évolution des <code>dataFrame</code>: <code>tibbledata</code></h1>
+<p>Si vous avez déjà travaillé dans R, vous avez surement du travailler avec des <code>data.frames</code>. Le concept de <code>data.frames</code> qui est natif de R commence à être obsolète. Cependant, il serait très compliqué de le changer. Il y a plutôt une évolution qui en est fait sous forme de librairie : <code>tibble</code></p>
+<p>Pour tout comprendre sur les <code>tibbles data</code> référez-vous à ce document :</p>
+<p><a href="http://r4ds.had.co.nz/tibbles.html"><img src="/images/tidy/tibbles.PNG" title="Cliquez pour suivre le lien" /></a></p>
+</div>
+<div id="représentation-graphique" class="section level1">
+<h1>Représentation graphique</h1>
+<p>La représentation graphique est très importante pour un analyste car il constitue une partie du rendu final de son travail. Une représentation graphique avec un effet <strong>“Waouh”</strong> facilite le rendu du travail.</p>
+<p>La librairie <code>ggplot2</code> offre différentes manières de représentation graphique.</p>
+<p>Pour les débutants, il est conseillé de lire ce chapitre:</p>
+<p><a href="http://r4ds.had.co.nz/exploratory-data-analysis.html"><img src="/images/tidy/ggplot2.PNG" title="Cliquez pour suivre le lien" /></a></p>
+<p>Un petit aide-mémoire pour se rappeler des fonctions additionnelles.</p>
+<p><a href="https://www.rstudio.com/wp-content/uploads/2015/06/ggplot2-french.pdf" id="id" class="class" width="100%" height="500"><img src="/images/tidy/ggplot.PNG" title="Cliquez pour suivre le lien" /></a></p>
+</div>
+<div id="programmation-fonctionnelle" class="section level1">
+<h1>Programmation fonctionnelle</h1>
+<p>La librairie <code>purrr</code> améliore la boîte à outils de programmation fonctionnelle (FP) de R en fournissant un ensemble complet et cohérent d’outils pour travailler avec des fonctions et des vecteurs.</p>
+<p>Si vous n’avez jamais entendu parler de FP auparavant, le meilleur endroit pour commencer est la famille des fonctions <code>map()</code> qui permet de remplacer beaucoup de boucles par du code à la fois plus succinct et plus facile à lire.</p>
+<p>Le meilleur endroit pour en apprendre davantage sur les fonctions <code>map</code> est le chapitre <strong>Itération</strong> dans <strong>R for data science</strong>.</p>
+<p><a href="http://r4ds.had.co.nz/iteration.html"><img src="/images/tidy/map.PNG" title="Cliquez pour suivre le lien" /></a></p>
+<p>Et bien sur un aide-mémoire pour les plus aguerris:</p>
+<p><a href="https://github.com/rstudio/cheatsheets/raw/master/purrr.pdf"><img src="/images/tidy/purrr.PNG" title="Cliquez pour suivre le lien" /></a></p>
+<p><br></p>
+</div>
+<div id="pour-aller-plus-loin" class="section level1">
+<h1>Pour aller plus loin …</h1>
+<p>Toutes les aides mémoires (et bien plus) utilisées ici sont disponibles sur le site de Rstudio <strong><a href="https://www.rstudio.com/resources/cheatsheets/">ici</a></strong>.</p>
+<p>Vous pouvez également voir une liste (non exhaustive et peut-être pas à jour) de quelques aides mémoires directement disponibles dans Rstudio dans <strong>Help&gt; Cheatsheets</strong> :</p>
+<p><img src="/images/tidy/cs2.png" /></p>
+<p><br></p>
+<hr />
+<p><strong>L’univers tidyverse inclue également d’autres librairies non inclus dans la librairie <code>tidyverse</code> . Allez toujours vérifier par rapport à vos besoins les librairies disponibles <a href="https://www.tidyverse.org/packages/">ici</a>. Dans tous les cas, n’hésitez pas à nous <a href="contactUs.html">contacter</a></strong>.</p>
+</div>
+<div id="au-delà-de-tidyverse-laide-mémoire-du-data-scientist" class="section level1">
+<h1>Au-delà de tidyverse : l’aide-mémoire du Data Scientist</h1>
+<p>Une excelente aide-mémoire a été conçue pour les “R-Scientists”. Elle résume l’essentiel des librairies, des ressources suivant vos différents travaux. Elle saura vous orienter dans les choix de librairies à utiliser et de ressources à lire.</p>
+<p><a href="/images/tidy/Data_Science_With_R_Workflow.pdf" title="Cliquez pour télécharger"><img src="/images/tidy/cs_ds.png" /></a></p>
+</div>

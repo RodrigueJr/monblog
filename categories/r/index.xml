@@ -8,6 +8,16 @@
     <language>fr-FR</language>
     <lastBuildDate>Sun, 25 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://rodrigue.netlify.app/categories/r/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Introdution au Tidyverse</title>
+      <link>https://rodrigue.netlify.app/posts/r/tidyverse/</link>
+      <pubDate>Sun, 25 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://rodrigue.netlify.app/posts/r/tidyverse/</guid>
+      <description>Tidyverse, j’utiliserai…
+R étant un logiciel libre et flexible, il y a pas mal de librairies qui ont été développés, dès fois pour résoudre le même problème. Pour éviter d’aller dans tous les sens et de s’y perdre finalement, Je vous propose de suivre un ensemble cohérent de librairies regrouper dans une “méga” librairie nommé tidyverse. Cette méga librairie contient 26 librairies dont voici les 7 principales:</description>
+    </item>
+    
+    <item>
       <title>L&#39;encodage de caractère</title>
       <link>https://rodrigue.netlify.app/posts/r/encoding/</link>
       <pubDate>Sun, 25 Oct 2020 00:00:00 +0000</pubDate>
@@ -15,16 +25,6 @@
       <guid>https://rodrigue.netlify.app/posts/r/encoding/</guid>
       <description>L’encodage de caractère c’est quoi ?Un ordinateur ne peut stocker que des nombres, ou plus précisément des 0 et des 1 (des « bits ») qu’on regroupe pour former des nombres en binaire.
 Comment fait-on alors pour écrire du texte ? La réponse est toute bête : on associe à chaque caractère (une lettre, un signe de ponctuation, une espace…) un nombre. Un texte est alors une suite de ces nombres, on parle de chaîne de caractères.</description>
-    </item>
-    
-    <item>
-      <title>Introdution au Tidyverse</title>
-      <link>https://rodrigue.netlify.app/posts/r/ti/</link>
-      <pubDate>Sun, 05 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://rodrigue.netlify.app/posts/r/ti/</guid>
-      <description>Tidyverse, j’utiliserai…
-R étant un logiciel libre et flexible, il y a pas mal de librairies qui ont été développés, dès fois pour résoudre le même problème. Pour éviter d’aller dans tous les sens et de s’y perdre finalement, Je vous propose de suivre un ensemble cohérent de librairies regrouper dans une “méga” librairie nommé tidyverse. Cette méga librairie contient 26 librairies (la liste complète ici) dont voici les 7 principales:</description>
     </item>
     
     <item>
