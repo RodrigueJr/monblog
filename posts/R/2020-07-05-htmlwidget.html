@@ -1,0 +1,31 @@
+---
+title: "Les htmlwidgets"
+subtitle: "Dynamisez vos sorties"
+author: Rodrigue EDORH
+date: 2020-07-05
+slug: htmlwidget
+categories: ["R"]
+tags: ["R Markdown", "Shiny"]
+---
+
+
+
+<blockquote>
+<p><strong>Les htmlwidgets peuvent être utilisés dans tous les formats de travail R (script R, R Markdown et applications Shiny)</strong></p>
+</blockquote>
+<p>Pour rendre vos visualisations interactives et dynamiques rien de mieux que d’utiliser des librairies JavaScripts. <strong>Pourquoi?</strong> Parce que JavaScript a été inventé pour dynamiser les sites internet et depuis, plusieurs librairies javascripts ont été développées dans ce sens. Mais ne vous inquiétez pas, vous n’aurez pas besoin de réellement comprendre le langage JavaScript pour en faire dans Rstudio. C’est là qu’intervient les <strong>htmlwidgets pour R</strong>.</p>
+<p>Les widgets HTML pour R sont des petites interfaces développées sous JavaScript qui vont vous permettre de faire des graphiques interactifs. Ils fonctionnent exactement comme les graphiques R, sauf qu’ils produisent des visualisations Web interactives. Une ligne ou deux de code R et voilà votre document plus beau avec un effet <strong>“Waouh”</strong>.</p>
+<p>Voici quelques librairies JavaScripts dans R:</p>
+<ul>
+<li><p><strong>leaflet</strong> : bibliothèque JavaScript permettant de créer des cartes dynamiques prenant en charge le panoramique et le zoom, ainsi que diverses annotations, telles que des marqueurs, des polygones et des fenêtres contextuelles. Plus d’info <a href="http://www.htmlwidgets.org/showcase_leaflet.html">ici</a></p></li>
+<li><p><strong>dygraph</strong> : elle offre de riches fonctions de représentation des données de séries temporelles dans R et inclut la prise en charge de nombreuses fonctions interactives, notamment la mise en surbrillance de séries / points, le zoom et le panoramique. Plus d’info <a href="http://www.htmlwidgets.org/showcase_dygraphs.html">ici</a></p></li>
+<li><p><strong>plotly</strong> : elle vous permet de traduire facilement vos graphiques ggplot2 en une version Web interactive. Il s’utilise en combinaison avec <code>ggplot2</code>. Plus d’info <a href="http://www.htmlwidgets.org/showcase_plotly.html">ici</a></p></li>
+<li><p><strong>DT</strong>: elle vous permet d’afficher les données R en tant que tables HTML interactives prenant en charge le filtrage, la pagination et le tri. Plus d’info <a href="http://www.htmlwidgets.org/showcase_datatables.html">ici</a></p></li>
+</ul>
+<p>Vous trouverez plus de librairies Javascript dans R <a href="http://www.htmlwidgets.org/showcase_leaflet.html">ici</a> et une galerie des widgets sur <a href="http://gallery.htmlwidgets.org/">htmlwidgets.org</a>.</p>
+<p>Vous pourrez créer vous-même un Htmlwigdet pour R avec la librairie <code>htmlwidgets</code>.</p>
+<div id="les-crosstalk" class="section level2">
+<h2>Les Crosstalk</h2>
+<p>Un crosstalk est un add-on des htmlwidgets. Il étend htmlwidgets avec un ensemble de classes, de fonctions et de conventions pour implémenter des interactions inter-widget.</p>
+<p>Plus d’info <a href="http://rstudio.github.io/crosstalk/index.html">ici</a></p>
+</div>

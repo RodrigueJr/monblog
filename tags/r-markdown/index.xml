@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>R Markdown on L&#39;univers de Rodrigue</title>
+    <title>R Markdown on Red</title>
     <link>https://rodrigue.netlify.app/tags/r-markdown/</link>
-    <description>Recent content in R Markdown on L&#39;univers de Rodrigue</description>
+    <description>Recent content in R Markdown on Red</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-FR</language>
-    <lastBuildDate>Sun, 05 Jul 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://rodrigue.netlify.app/tags/r-markdown/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 05 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://rodrigue.netlify.app/tags/r-markdown/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Les htmlwidgets</title>
       <link>https://rodrigue.netlify.app/posts/r/htmlwidget/</link>
@@ -27,8 +23,7 @@
       <pubDate>Sun, 05 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://rodrigue.netlify.app/posts/r/rmarkdown/</guid>
-      <description>Les images ne charges pas pour l’instant. Ce sera corrigé asap :)
-Un rapport à rédiger? Un document de travail? Une démonstration interactive? Vous êtes au bon endroit pour apprendre ce qui se fait de mieux avec R.
+      <description>Un rapport à rédiger? Un document de travail? Une démonstration interactive? Vous êtes au bon endroit pour apprendre ce qui se fait de mieux avec R.
 Depuis Rstudio vous pouvez créer un éventail de visualisations sous forme de documents (statiques ou dynamiques) markdown.
 Avec Markdown, fini les exports csv pour faire des graphiques dans Excel, fini les Powerpoints avec des mises en formes manuelles et complexes, fini les rapports word…</description>
     </item>

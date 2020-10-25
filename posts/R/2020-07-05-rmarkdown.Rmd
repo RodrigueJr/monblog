@@ -7,9 +7,6 @@ categories: ["R"]
 tags: ["R Markdown"]
 ---
 
-<table width="80%" border ="1" cellspacing="1" bordercolor="red" align=center> <tr><td><div align=center> Les images ne charges pas pour l'instant. Ce sera corrigé asap :)  </div></td></tr></table>
-
-<br>
 
 > Un rapport à rédiger? Un document de travail? Une démonstration interactive? Vous êtes au bon endroit pour apprendre ce qui se fait de mieux avec R.
 
@@ -51,13 +48,13 @@ Un document markdown peut être un document __HTML__, __PDF<a href="#note1" id="
 
 Pour créer un document Rmarkdown il faut aller dans __File > New File > R Markdown__. Il vous affichera cette barre de dialogue.
 
-![](image/post-rmarkdown/firstrmarkdown.PNG)
+![](/images/post-rmarkdown/firstrmarkdown.PNG)
 
 <br>
 
 Tout en haut à droite, vous pouvez spécifier  le nom du document et le nom de l'auteur. Ensuite en bas à droite vous spécifiez le type de document (HTML, PDF, WORD) puis OK. Il vous créera un fichier avec un exemple comme ceci:
 
-![](image/post-rmarkdown/firstrmarkdown2.PNG)
+![](/images/post-rmarkdown/firstrmarkdown2.PNG)
 
 <br>
 
@@ -71,9 +68,9 @@ L'insertion de blocs R dans un document Rmarkdown, se fait grâce à la synthase
 \`\`\`
 
 
-Lorsque vous commencez à écrire votre document markdown, il faut enregistrer le fichier dans votre répertoire. On décide de l'appeler __Premier_Rmarkdown__. Les fichiers Rmarkdown ont pour extension "__.Rmd__".  Pour compiler le document on clique sur le bouton ![](image/post-rmarkdown/knit.PNG). On obtient une sortie Html comme ceci:
+Lorsque vous commencez à écrire votre document markdown, il faut enregistrer le fichier dans votre répertoire. On décide de l'appeler __Premier_Rmarkdown__. Les fichiers Rmarkdown ont pour extension "__.Rmd__".  Pour compiler le document on clique sur le bouton ![](/images/post-rmarkdown/knit.PNG). On obtient une sortie Html comme ceci:
 
-![](image/post-rmarkdown/firstrmarkdown3.PNG)
+![](/images/post-rmarkdown/firstrmarkdown3.PNG)
 
 <br>
 
@@ -97,18 +94,18 @@ Lorsque vous enregistrez un notebook, un fichier `.nb.html` est créé à côté
 Pour créer un R notebook, allez dans __File > New File > R Notebook__
 
 
-![](image/post-rmarkdown/notebook1.png)
+![](/images/post-rmarkdown/notebook1.png)
 <br>
 
 Comme vous pouvez le remarquer, à la place du __Knit__ d'un Rmarkdown classique vous avez plutôt un __Preview__. Enregistrez le fichier (__mon premier markdown__ par exemple). Un fichier `.nb.html` est créé. 
 
-![](image/post-rmarkdown/notebook2.png)
+![](/images/post-rmarkdown/notebook2.png)
 
 <br>
 
 En cliquant sur __Preview__ vous ouvrez le fichier `mon premier notebook.nb.html`. Dans le html qui est généré, vous avez en haut à droite le bouton __Code__. Avec ce bouton vous avez la possibilité d'afficher ou de cacher tout votre code. Vous pouvez également télécharger le fichier `.Rmd` associé. 
 
-![](image/post-rmarkdown/notebook3.png)
+![](/images/post-rmarkdown/notebook3.png)
 <br>
 
 > A Savoir : Le __Preview__ ne compile pas votre notebook. Il restitue votre notebook tel que vous le voyez dans Rstudio sous un format html. Ainsi, un bloc R qui n'a pas été exécuté dans Rstudio ne le sera pas dans la sortie html  
@@ -124,15 +121,15 @@ Pour créer un document interactif aller dans __File>New File>R Markdown__.
 
 Dans la barre de gauche choisissez __Shiny__. Donnée un titre à votre document dans __Title__ puis __OK__
 
- ![](image/post-rmarkdown/mardown_shiny1.png) 
+ ![](/images/post-rmarkdown/mardown_shiny1.png) 
 
 <br>
 
-Un fichier "Untitled.Rmd" est créé. Il faut l'enregistrer puis cliquer sur ![](image/post-rmarkdown/mardown_shiny_run_doc.png).
+Un fichier "Untitled.Rmd" est créé. Il faut l'enregistrer puis cliquer sur ![](/images/post-rmarkdown/mardown_shiny_run_doc.png).
 
 Vous venez de créer un document interactif inclus par défaut dans R Studio.
 
- ![](image/post-rmarkdown/mardown_shiny2.png) 
+ ![](/images/post-rmarkdown/mardown_shiny2.png) 
 
 <br>
 
@@ -159,14 +156,14 @@ Vous pourrez ainsi :
 
 Pour créer un flexdashboard, il faut aller dans __File>New file>R Markdown__. Dans la barre de gauche, cliquez sur __From Template__ puis sur __Flex Dashboard__ et __OK__. 
   
- ![](image/post-rmarkdown/flexdashboard.png) 
+ ![](/images/post-rmarkdown/flexdashboard.png) 
 
 <br>
-Un fichier "Untitled.rmd" est créé. Changer le titre de votre document en ligne 2 en "Mon tableau de bord". Enregistrez le puis compilez le ![](image/post-rmarkdown/knit.PNG). 
+Un fichier "Untitled.rmd" est créé. Changer le titre de votre document en ligne 2 en "Mon tableau de bord". Enregistrez le puis compilez le ![](/images/post-rmarkdown/knit.PNG). 
 
 Vous devriez avoir ceci : 
 
- ![](image/post-rmarkdown/flexdashboard2.png) 
+ ![](/images/post-rmarkdown/flexdashboard2.png) 
 
 <br>
 
@@ -198,12 +195,12 @@ De manière générale, tout ce que vous pouvez faire de dynamiques ([htmlwidget
 
 Pour créer une présentation : __File>New File> R Markdown__. Dans la barre de gauche, cliquez sur __Presentation___. Donnez-lui un nom puis __OK__.
 
- ![](image/post-rmarkdown/slide.png) 
+ ![](/images/post-rmarkdown/slide.png) 
 
 
 Enregistrez votre fichier puis compilez. 
 
- ![](image/post-rmarkdown/slide1.png) 
+ ![](/images/post-rmarkdown/slide1.png) 
 
 
 <br>
