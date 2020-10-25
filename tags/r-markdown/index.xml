@@ -18,6 +18,16 @@ Comment fait-on alors pour écrire du texte ? La réponse est toute bête : on a
     </item>
     
     <item>
+      <title>Introdution au Tidyverse</title>
+      <link>https://rodrigue.netlify.app/posts/r/ti/</link>
+      <pubDate>Sun, 05 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://rodrigue.netlify.app/posts/r/ti/</guid>
+      <description>Tidyverse, j’utiliserai…
+R étant un logiciel libre et flexible, il y a pas mal de librairies qui ont été développés, dès fois pour résoudre le même problème. Pour éviter d’aller dans tous les sens et de s’y perdre finalement, Je vous propose de suivre un ensemble cohérent de librairies regrouper dans une “méga” librairie nommé tidyverse. Cette méga librairie contient 26 librairies (la liste complète ici) dont voici les 7 principales:</description>
+    </item>
+    
+    <item>
       <title>Les htmlwidgets</title>
       <link>https://rodrigue.netlify.app/posts/r/htmlwidget/</link>
       <pubDate>Sun, 05 Jul 2020 00:00:00 +0000</pubDate>
