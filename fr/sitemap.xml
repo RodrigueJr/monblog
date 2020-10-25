@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://rodrigue.netlify.app/categories/</loc>
-    <lastmod>2020-07-05T00:00:00+00:00</lastmod>
+    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -18,33 +18,28 @@
   </url>
   
   <url>
-    <loc>https://rodrigue.netlify.app/posts/r/htmlwidget/</loc>
-    <lastmod>2020-07-05T00:00:00+00:00</lastmod>
+    <loc>https://rodrigue.netlify.app/posts/r/encoding/</loc>
+    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://rodrigue.netlify.app/posts/</loc>
-    <lastmod>2020-07-05T00:00:00+00:00</lastmod>
+    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://rodrigue.netlify.app/categories/r/</loc>
-    <lastmod>2020-07-05T00:00:00+00:00</lastmod>
+    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://rodrigue.netlify.app/tags/r-markdown/</loc>
-    <lastmod>2020-07-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://rodrigue.netlify.app/posts/r/rmarkdown/</loc>
-    <lastmod>2020-07-05T00:00:00+00:00</lastmod>
+    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://rodrigue.netlify.app/</loc>
-    <lastmod>2020-07-05T00:00:00+00:00</lastmod>
+    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -58,13 +53,8 @@
   </url>
   
   <url>
-    <loc>https://rodrigue.netlify.app/tags/shiny/</loc>
-    <lastmod>2020-07-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://rodrigue.netlify.app/tags/</loc>
-    <lastmod>2020-07-05T00:00:00+00:00</lastmod>
+    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -75,6 +65,21 @@
                 hreflang="fr"
                 href="https://rodrigue.netlify.app/tags/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://rodrigue.netlify.app/posts/r/htmlwidget/</loc>
+    <lastmod>2020-07-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rodrigue.netlify.app/posts/r/rmarkdown/</loc>
+    <lastmod>2020-07-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rodrigue.netlify.app/tags/shiny/</loc>
+    <lastmod>2020-07-05T00:00:00+00:00</lastmod>
   </url>
   
 </urlset>

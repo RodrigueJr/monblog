@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>L&#39;encodage de caractère</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="/assets/css/layouts/main.css"/>
+<link rel="stylesheet" href="/assets/css/style.css"/>
+<link rel="stylesheet" href="/assets/css/navigators/navbar.css"/>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+
+
+<link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+
+
+<link rel="stylesheet" href="/assets/css/style.css"/>
+
+    
+<meta name="description" content="L&#39;encodage de caractère" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css"
+/>
+<link rel="stylesheet" href="/assets/css/layouts/single.css"/>
+<link rel="stylesheet" href="/assets/css/navigators/sidebar.css">
+
+
+    
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-171649523-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+  </head>
+
+  <body data-spy="scroll" data-target="#TableOfContents" data-offset="80">
+    <div class="container-fluid bg-dimmed wrapper">
+      
+      
+    
+
+
+
+
+<nav class="navbar navbar-expand-xl top-navbar final-navbar shadow">
+  <div class="container">
+      <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button" onclick="toggleSidebar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="/">
+      <img src="/assets/images/main-logo.png">Red</a>
+    <button class="navbar-toggler navbar-light" id="toc-toggler" type="button" onclick="toggleTOC()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse lang-selector" id="top-nav-items">
+      <ul class="navbar-nav ml-auto">
+      
+      </ul>
+    </div>
+  </div>
+  
+  <img src="/assets/images/main-logo.png" class="d-none" id="main-logo">
+  <img src="/assets/images/inverted-logo.png" class="d-none" id="inverted-logo">
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <input type="text" value="" placeholder="Search" data-search="" id="search-box" />
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="https://rodrigue.netlify.appposts" data-filter="all">Posts</a></li>
+            <div class="subtree">
+                
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(https://rodrigue.netlify.app/assets/images/default-hero.jpg);'>
+      </div>
+
+      
+      <div class="page-content">
+        <div class="author-profile ml-auto align-self-lg-center">
+          <img class="rounded-circle" src='/images/avatar_test%20%282%29.jpeg'/>
+          <h5 class="author-name"></h5>
+          <p>October 25, 2020</p>
+        </div>
+
+        <div class="title">
+          <h1>L&#39;encodage de caractère</h1>
+        </div>
+
+        <div class="post-content" id="post-content">
+          
+
+
+<div id="lencodage-de-caractère-cest-quoi" class="section level1">
+<h1>L’encodage de caractère c’est quoi ?</h1>
+<p>Un ordinateur ne peut stocker que des nombres, ou plus précisément des 0 et des 1 (des « bits ») qu’on regroupe pour former des nombres en binaire.</p>
+<p>Comment fait-on alors pour écrire du texte ? La réponse est toute bête : on associe à chaque caractère (une lettre, un signe de ponctuation, une espace…) un nombre. Un texte est alors une suite de ces nombres, on parle de chaîne de caractères.</p>
+<p>L’<a href="https://fr.wikipedia.org/wiki/Codage_des_caract%C3%A8res">encodage</a> est une table de correspondance entre un ordinateur et le langage humain (français, anglais, chinois…).</p>
+<blockquote>
+<p>Si vous voulez aller plus loin sur l’encodage et son histoire, nous vous recommandons ce tutoriel : <a href="http://sdz.tdct.org/sdz/comprendre-les-encodages.html">Comprendre les encodages</a>.</p>
+</blockquote>
+</div>
+<div id="utf-8-lencodage-référence" class="section level1">
+<h1>UTF-8: l’encodage référence</h1>
+<p>Au fil des années plusieurs encodages ont été créés. Un a finalement réussi à regrouper presque tous les langages. Il s’agit de L’<a href="https://fr.wikipedia.org/wiki/Unicode">Unicode</a>. Il y a plusieurs implémentations concrètes d’Unicode. Le plus célèbre est “UTF-8”. L’<a href="https://fr.wikipedia.org/wiki/UTF-8">UTF-8</a> est le seul encodage vers lequel, aujourd’hui, on puisse convertir vers et depuis (pratiquement) toutes les langues au monde.</p>
+<p>Suivant le système d’exploitation que vous utilisez, l’encodage par défaut n’est pas le même.</p>
+<p>Par exemple, les systèmes d’exploitation <strong>Linux</strong> utilisent en général par défaut l’encodage <strong>UTF-8</strong>. Par contre sous Windows l’encodage par défaut est généralement <strong>Windows 1252</strong>.</p>
+</div>
+<div id="lencodage-sur-linux" class="section level1">
+<h1>L’encodage sur Linux</h1>
+<p>Si vous travailler avec des VM notamment via des plateformes clous (CGP, AWS, AZURE…), il y a de fortes chances que vous travaillez sous Linux. Par conséquent l’encodage par défaut est <strong>UTF-8</strong>. Ceci implique que lors de l’importation ou de l’exportation des données, les caractères seront encodés par défaut en UTF-8.</p>
+</div>
+<div id="illustration-des-problèmes-liés-à-lencodage-sur-les-données" class="section level1">
+<h1>Illustration des problèmes liés à l’encodage sur les données</h1>
+<div id="exemple-1-vm-linux-vers-excel-bureau" class="section level2">
+<h2>Exemple 1 : VM Linux vers Excel Bureau</h2>
+<p>Construisons une table depuis notre environnement Linux avec des caractères spéciaux:</p>
+<pre class="r"><code>df &lt;- tibble::tibble(nom = c(&quot;Éric&quot;, &quot;Nathanël&quot;), entreprise = c(&quot;Réseau de Transport d&#39;électricité&quot;, &quot;Réseau de Transport d&#39;électricité&quot;))
+df</code></pre>
+<pre><code>## # A tibble: 2 x 2
+##   nom      entreprise                       
+##   &lt;chr&gt;    &lt;chr&gt;                            
+## 1 Éric     Réseau de Transport d&#39;électricité
+## 2 Nathanël Réseau de Transport d&#39;électricité</code></pre>
+<p>Sauvegardons notre table dans un csv.</p>
+<pre class="r"><code>readr::write_csv2(df, &quot;df.csv&quot;)</code></pre>
+<p>Exportons ensuite le fichier vers notre poste windows (Onglet <strong>Files</strong> puis <strong>More &gt; Export</strong>) et ouvrons le dans excel en double-cliquant sur le fichier.</p>
+<p>Normalement la table ressemble à ca:</p>
+<p><img src="/images/post-rmarkdown/encodage_linux_windows.png" /></p>
+<p>Les caractères spéciaux ont été transformés en des caractères “bizarres”.</p>
+</div>
+<div id="exemple-2-excel-bureau-vers-linux" class="section level2">
+<h2>Exemple 2: Excel Bureau vers Linux</h2>
+<p>Créons un fichier csv depuis excel sur notre poste bureautique avec des caractères spéciaux.
+<img src="/images/post-rmarkdown/encodage_windows_linux.png" /></p>
+<p>On le télécharge sur Rstudio dans Linux (bouton <strong>Upload</strong> dans l’onglet <strong>Files</strong>) et on l’importe en mémoire</p>
+<pre class="r"><code>df2 &lt;- readr::read_csv2(&quot;/data_post/example_encoding.csv&quot;)
+
+df2</code></pre>
+<p>A l’affichage, les caractères spéciaux ont été transformés en des caractères “bizarres”.</p>
+<p>Voici illustré en deux exemples, les problèmes d’encodage que vous pourriez avoir.
+Ce qui s’est passé, c’est que comme Linux et windows n’utilise pas le même encodage par défaut, certains caractères ont été mal retranscrits.</p>
+</div>
+</div>
+<div id="bien-gérer-lencodage" class="section level1">
+<h1>Bien gérer l’encodage</h1>
+<div id="a-la-lecture-des-données" class="section level2">
+<h2>A la lecture des données</h2>
+<p>La solution pour bien lire les données (que ce soit dans Linux ou Windows) est de spécifier l’encodage qui a servi pour enregistrer les données.</p>
+<div id="dans-excel" class="section level3">
+<h3>Dans Excel</h3>
+<p>Dans la première illustration, il faut ouvrir le fichier csv dans excel en spécifiant UTF-8 comme encodage.</p>
+<p>Pour cela, il faut ouvrir une page excel vierge puis aller dans <strong>DONNÉES &gt; Fichier texte</strong>.
+Sélectionnez votre fichier. Dans l’assistant d’importation de texte à l’étape 1 vous avez <strong>Origine du fichier</strong>. Sélectionnez
+<strong>65001 : Unicode (UTF-8)</strong> puis suivez le reste des étapes jusqu’à la fin.</p>
+<p>Après importation, les caractères spéciaux devraient s’afficher normalement.</p>
+</div>
+<div id="dans-linux" class="section level3">
+<h3>Dans Linux</h3>
+<p>Dans la deuxième illustration, il faut lire le fichier csv dans Linux en spécifiant <strong>WINDOWS-1252</strong> comme encodage.</p>
+<pre class="r"><code>df2 &lt;- readr::read_csv2(&quot;/data_post/example_encoding.csv&quot;, locale = readr::locale(encoding = &quot;WINDOWS-1252&quot;))
+
+df2</code></pre>
+<blockquote>
+<p>Presque toutes les fonctions de lecture de fichier dans R ont une option qui permet de spécifier l’encodage (<code>fileEncoding</code> pour <code>read.\*</code>, <code>encoding</code> pour <code>fread</code>, <code>local</code> pour <code>read_*</code> …)</p>
+</blockquote>
+<p>Vous pouvez aussi modifier l’encodage des caractères après lecture avec <code>parse_character</code>.</p>
+<pre class="r"><code>df2 &lt;- readr::read_csv2(&quot;/data_post/example_encoding.csv&quot;)
+
+df2
+
+# On change l&#39;encodage de tous les types caractères
+df2 &lt;- dplyr::mutate_all(df2, function(x){readr::parse_character(x, locale = readr::locale(encoding = &quot;WINDOWS-1252&quot;))})
+df2</code></pre>
+</div>
+</div>
+<div id="a-lécriture-des-données" class="section level2">
+<h2>A l’écriture des données</h2>
+<p>A l’écriture des données vous avez deux choix possibles :</p>
+<ul>
+<li>Spécifier l’encodage lors de l’écriture</li>
+</ul>
+<p>Pour faire cela nous allons utiliser les fonctions de base dans R <code>file</code> et <code>write.csv2</code></p>
+<pre class="r"><code>con&lt;-file(&#39;df.csv&#39;,encoding=&quot;WINDOWS-1252&quot;)
+write.csv2(df,file=con)</code></pre>
+<blockquote>
+<p>NOTE: Il n’a pas été prévu la spécification de l’encodage avec la fonction <code>write_csv2</code> de <code>readr</code> ni <code>fwrite</code> pour <code>data.table</code>. Ils écrivent toujours en UTF-8. La requête précédente ne changera donc pas l’encodage si vous utilisez <code>write_csv2</code> (<code>fwrite</code> ne prend pas de paramètre de type <code>connection</code>).</p>
+</blockquote>
+<ul>
+<li>Rajouter un Indicateur d’ordre des octets (Byte Order Mark)</li>
+</ul>
+<p>En Unicode, <a href="https://fr.wikipedia.org/wiki/Indicateur_d%27ordre_des_octets">l’indicateur d’ordre des octets</a> ou BOM (pour l’anglais byte order mark) est une donnée qui indique l’utilisation d’un encodage Unicode ainsi que l’ordre des octets, généralement situé au début de certains fichiers texte.</p>
+<p>Pour dire simple le BOM spécifie lors de l’écriture que le fichier est encodé en Unicode (UTF-8 dans notre cas).</p>
+<p>Pour faire cela, on utilise la fonction <code>write_excel_csv2</code> de <code>readr</code></p>
+<pre class="r"><code>readr::write_excel_csv2(df, &quot;df-UTF8-BOM.csv&quot;)</code></pre>
+<p>A l’ouverture dans tout autre environnement (Excel bureau dans notre cas), L’encodage UTF-8 sera automatiquement utilisé.</p>
+</div>
+</div>
+<div id="et-mes-scripts-dans-tout-ça" class="section level1">
+<h1>Et mes scripts dans tout ça 🤔?</h1>
+<p>Si vous rédigez/récupérez des scripts rédigés dans deux environnements différents (Rstudio en local sur votre poste Windows et Linux) vous aurez surement des soucis avec les caractères spéciaux lors du passage d’un environnement à l’autre.</p>
+<p>Pour éviter ces désagréments dans vos scripts, nous vous conseillons fortement de mettre l’encodage UTF-8 par défaut sur votre Rstudio Linux et windows.</p>
+<p>Pour le faire, allez dans <strong>Tools &gt; Global Option &gt; Code &gt; Saving &gt; Default text encoding</strong> et mettez UTF-8.</p>
+<p>Si vous disposez d’un script déjà écrit dans un autre encodage, vous pouvez le réouvrir en spécifiant le bon encodage. Ouvrez le fichier puis allez dans <strong>File &gt; Reopen with encoding</strong>.</p>
+<p>Vous pouvez ensuite faire <strong>File &gt; Save with encoding</strong> pour l’enregistrer en UTF-8.</p>
+</div>
+<div id="nos-conseils" class="section level1">
+<h1>Nos conseils 🙂</h1>
+<blockquote>
+<p>UTF-8, j’utiliserai…</p>
+</blockquote>
+<ul>
+<li>Réglez votre R local en UTF8</li>
+<li>Réglez l’encodage à la lecture de vos fichiers</li>
+<li>Convertissez vos scripts en UTF-8 s’ils ne le sont pas</li>
+<li>Si vous rencontrez des problèmes de caractères bizarres, c’est surement lié à un mauvais encodage utilisé à la lecture.</li>
+<li>Dans R il y a des fonctions qui peuvent aider à identifier l’encodage si vous avez des doutes (<code>readr::guess_encoding</code> par exemple)</li>
+</ul>
+</div>
+<div id="quelques-articles-sur-lencodage-dans-r" class="section level1">
+<h1>Quelques articles sur l’encodage dans R</h1>
+<ul>
+<li><a href="https://freakonometrics.hypotheses.org/52168">Unicode, UTF-8… la base de l’encodage</a></li>
+<li><a href="https://support.rstudio.com/hc/en-us/articles/200532197-Character-Encoding">Script Encoding</a></li>
+<li><a href="https://kevinushey.github.io/blog/2018/02/21/string-encoding-and-r/">Write UTF-8 encoded content to a file</a></li>
+<li><a href="https://readr.tidyverse.org/articles/locales.html#character">Character with <code>readr</code></a></li>
+<li><a href="https://appsilon.com/writing-excel-formatted-csv-using-readrwrite_excel_csv2/">Writing excel formatted csv using <code>readr::write_excel_csv2</code></a></li>
+<li><a href="https://irene.rbind.io/post/encoding-in-r/">Encoding in R</a></li>
+</ul>
+</div>
+
+        </div>
+
+        
+        
+          <div class="btn-improve-page">
+              <a href="https://github.com/RodrigueJr/monblog/edit/master/content/posts%5cR%5c2020-10-25-encodage.html">
+                <i class="fas fa-code-branch"></i>
+                Improve This Page
+              </a>
+          </div>
+        
+
+        
+      <hr />
+        <div class="row next-prev-navigator">
+
+
+  
+
+  
+
+  
+    
+    
+      
+        
+        
+        <div class="col-md-12 next-article">
+          <a href="/posts/r/htmlwidget/" class="btn btn-outline-info">
+            <span>Next <i class="fas fa-chevron-circle-right"></i></span>
+            <br />
+            <span>Les htmlwidgets</span>
+          </a>
+        </div>
+      
+    
+  
+
+</div>
+
+      <hr />
+      
+      
+          <div id="disqus_thread"></div>
+<script type="text/javascript">
+  (function () {
+    
+    
+    if (window.location.hostname == "localhost") return;
+
+    var dsq = document.createElement("script");
+    dsq.type = "text/javascript";
+    dsq.async = true;
+    var disqus_shortname = "true";
+    dsq.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+    (
+      document.getElementsByTagName("head")[0] ||
+      document.getElementsByTagName("body")[0]
+    ).appendChild(dsq);
+  })();
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+<a href="https://disqus.com/" class="dsq-brlink"
+  >comments powered by <span class="logo-disqus">Disqus</span></a
+>
+
+      
+      </div>
+    </div>
+  </div>
+  
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+  </section>
+
+    </div>
+
+    
+
+  
+
+
+
+
+  
+
+
+
+
+  
+  
+    
+  
+
+
+<footer class="container-fluid text-center align-content-center footer pb-2">
+  <div class="container pt-5">
+    <div class="row text-left">
+      <div class="col-md-4 col-sm-12">
+        <h5>Naviguation</h5>
+        
+        <ul>
+            
+              
+              
+                
+              
+              <li class="nav-item">
+                <a class="smooth-scroll" href="#about">A Propos</a>
+              </li>
+            
+            
+            
+              
+              
+                
+              
+              <li class="nav-item">
+                <a class="smooth-scroll" href="#experiences">Experiences</a>
+              </li>
+            
+            
+            
+              
+              
+                
+              
+              <li class="nav-item">
+                <a class="smooth-scroll" href="#Recent%20Posts">Posts Recent</a>
+              </li>
+            
+            
+        </ul>
+        
+
+      </div>
+      
+      <div class="col-md-4 col-sm-12">
+        <h5>Contactez moi :</h5>
+        <ul>
+          
+          <li><span>Email: </span> <span>rodrigue.edorh@yahoo.fr</span></li>
+          
+        </ul>
+      </div>
+      
+      
+    </div>
+  </div>
+  <hr />
+  <div class="container">
+    <div class="row text-left">
+      <div class="col-md-4">
+        <a id="theme" href="https://github.com/hossainemruz/toha" target="#">
+          <img src="/assets/images/inverted-logo.png">
+          Toha
+        </a>
+      </div>
+      <div class="col-md-4 text-center">© 2020 Droits d&#39;auteur.</div>
+      <div class="col-md-4 text-right">
+        <a id="hugo" href="https://gohugo.io/">Alimenté par
+        <img
+          src="/assets/images/hugo-logo-wide.svg"
+          alt="Hugo Logo"
+          height="18"
+        />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script src="/assets/js/jquery-3.4.1.min.js"></script>
+<script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+
+<script src="/assets/js/navbar.js"></script>
+<script src="/assets/js/main.js"></script>
+
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script src="/assets/js/single.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
+
+  </body>
+</html>

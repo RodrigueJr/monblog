@@ -6,7 +6,17 @@
     <description>Recent content in R on Red</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-FR</language>
-    <lastBuildDate>Sun, 05 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://rodrigue.netlify.app/categories/r/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://rodrigue.netlify.app/categories/r/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>L&#39;encodage de caractère</title>
+      <link>https://rodrigue.netlify.app/posts/r/encoding/</link>
+      <pubDate>Sun, 25 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://rodrigue.netlify.app/posts/r/encoding/</guid>
+      <description>L’encodage de caractère c’est quoi ?Un ordinateur ne peut stocker que des nombres, ou plus précisément des 0 et des 1 (des « bits ») qu’on regroupe pour former des nombres en binaire.
+Comment fait-on alors pour écrire du texte ? La réponse est toute bête : on associe à chaque caractère (une lettre, un signe de ponctuation, une espace…) un nombre. Un texte est alors une suite de ces nombres, on parle de chaîne de caractères.</description>
+    </item>
+    
     <item>
       <title>Les htmlwidgets</title>
       <link>https://rodrigue.netlify.app/posts/r/htmlwidget/</link>

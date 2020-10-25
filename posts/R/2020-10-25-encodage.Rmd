@@ -1,0 +1,187 @@
+---
+title: "L'encodage de caractère"
+subtitle: "Comprendre et utiliser l'encodage dans Rstudio"
+author: Rodrigue EDORH
+date: 2020-10-25
+slug: encoding
+categories: ["R"]
+tags: ["R Markdown"]
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(message = FALSE)
+```
+
+# L'encodage de caractère c'est quoi ?
+
+Un ordinateur ne peut stocker que des nombres, ou plus précisément des 0 et des 1 (des « bits ») qu’on regroupe pour former des nombres en binaire. 
+
+Comment fait-on alors pour écrire du texte ? La réponse est toute bête : on associe à chaque caractère (une lettre, un signe de ponctuation, une espace…) un nombre. Un texte est alors une suite de ces nombres, on parle de chaîne de caractères.
+
+L'[encodage](https://fr.wikipedia.org/wiki/Codage_des_caract%C3%A8res) est une table de correspondance entre un ordinateur et le langage humain (français, anglais, chinois...). 
+
+> Si vous voulez aller plus loin sur l'encodage et son histoire, nous vous recommandons ce tutoriel :  [Comprendre les encodages](http://sdz.tdct.org/sdz/comprendre-les-encodages.html). 
+
+# UTF-8: l'encodage référence 
+
+Au fil des années plusieurs encodages ont été créés.  Un a finalement réussi à regrouper presque tous les langages. Il s'agit de L'[Unicode](https://fr.wikipedia.org/wiki/Unicode). Il y a plusieurs implémentations concrètes d’Unicode. Le plus célèbre est "UTF-8". L'[UTF-8](https://fr.wikipedia.org/wiki/UTF-8) est le seul encodage vers lequel, aujourd’hui, on puisse convertir vers et depuis (pratiquement) toutes les langues au monde.
+
+Suivant le système d'exploitation que vous utilisez, l'encodage par défaut n'est pas le même.  
+
+Par exemple, les systèmes d'exploitation  __Linux__ utilisent en général par défaut l'encodage __UTF-8__. Par contre sous Windows l'encodage par défaut est généralement __Windows 1252__. 
+
+
+# L'encodage sur Linux
+
+Si vous travailler avec des VM notamment via des plateformes clous (CGP, AWS, AZURE...), il y a de fortes chances que vous travaillez sous Linux. Par conséquent l'encodage par défaut est __UTF-8__. Ceci implique que lors de l'importation ou de l'exportation des données, les caractères seront encodés par défaut en UTF-8.
+
+# Illustration des problèmes liés à l'encodage sur les données
+
+## Exemple 1 : VM Linux vers Excel Bureau
+
+Construisons une table depuis notre environnement Linux avec des caractères spéciaux: 
+
+```{r}
+df <- tibble::tibble(nom = c("Éric", "Nathanël"), entreprise = c("Réseau de Transport d'électricité", "Réseau de Transport d'électricité"))
+df
+```
+
+Sauvegardons notre table dans un csv. 
+
+
+```{r, eval =F}
+readr::write_csv2(df, "df.csv")
+```
+
+Exportons ensuite le fichier vers notre poste windows (Onglet __Files__ puis __More > Export__) et ouvrons le dans excel en double-cliquant sur le fichier. 
+
+Normalement la table ressemble à ca:
+
+![](/images/post-rmarkdown/encodage_linux_windows.png)
+
+Les  caractères spéciaux ont été transformés en des caractères "bizarres".
+
+## Exemple 2: Excel Bureau vers Linux
+
+Créons un fichier csv depuis excel sur notre poste bureautique avec des caractères spéciaux. 
+![](/images/post-rmarkdown/encodage_windows_linux.png)
+
+On le télécharge sur Rstudio dans Linux (bouton __Upload__ dans l'onglet __Files__) et on l'importe en mémoire
+
+```{r, eval=FALSE}
+df2 <- readr::read_csv2("/data_post/example_encoding.csv")
+
+df2
+```
+A l'affichage, les caractères spéciaux ont été transformés en  des caractères "bizarres".
+
+
+
+Voici illustré en deux exemples, les problèmes d'encodage que vous pourriez avoir. 
+Ce qui s'est passé, c'est que comme Linux et windows n'utilise pas le même encodage par défaut, certains caractères ont été mal retranscrits. 
+
+
+# Bien gérer l'encodage
+
+## A la lecture des données
+
+
+La solution pour bien lire les données (que ce soit dans Linux ou Windows) est de spécifier l'encodage qui a servi pour enregistrer les données. 
+
+### Dans Excel
+
+Dans la première illustration, il faut ouvrir le fichier csv dans excel en spécifiant UTF-8 comme encodage.
+
+Pour cela, il faut ouvrir une page excel vierge puis aller dans __DONNÉES > Fichier texte__.
+Sélectionnez votre fichier. Dans l'assistant d'importation de texte à l'étape 1 vous avez __Origine du fichier__. Sélectionnez
+__65001 : Unicode (UTF-8)__ puis suivez le reste des étapes jusqu'à la fin. 
+
+Après importation, les caractères spéciaux devraient s'afficher normalement. 
+
+### Dans Linux
+
+Dans la deuxième illustration, il faut lire le fichier csv dans Linux en spécifiant __WINDOWS-1252__ comme encodage.
+
+```{r, eval=FALSE}
+df2 <- readr::read_csv2("/data_post/example_encoding.csv", locale = readr::locale(encoding = "WINDOWS-1252"))
+
+df2
+```
+
+> Presque toutes les fonctions de lecture de fichier dans R ont une option qui permet de spécifier l'encodage (`fileEncoding` pour `read.\*`, `encoding` pour `fread`, `local` pour `read_*` ...)
+
+Vous pouvez aussi modifier l'encodage des caractères après lecture avec `parse_character`. 
+
+```{r, eval=FALSE}
+df2 <- readr::read_csv2("/data_post/example_encoding.csv")
+
+df2
+
+# On change l'encodage de tous les types caractères
+df2 <- dplyr::mutate_all(df2, function(x){readr::parse_character(x, locale = readr::locale(encoding = "WINDOWS-1252"))})
+df2
+```
+
+
+## A l'écriture des données
+
+A l'écriture des données vous avez deux choix possibles :
+
++ Spécifier l'encodage lors de l'écriture
+
+Pour faire cela nous allons utiliser les fonctions de base dans R `file` et `write.csv2`
+
+```{r}
+con<-file('df.csv',encoding="WINDOWS-1252")
+write.csv2(df,file=con)
+```
+
+> NOTE: Il n'a pas été prévu la spécification de l'encodage avec la fonction `write_csv2` de `readr` ni `fwrite` pour `data.table`. Ils écrivent toujours en UTF-8. La requête précédente ne changera donc pas l'encodage si vous utilisez `write_csv2` (`fwrite` ne prend pas de paramètre de type `connection`).
+
++ Rajouter un Indicateur d'ordre des octets (Byte Order Mark)
+
+En Unicode, [l'indicateur d'ordre des octets](https://fr.wikipedia.org/wiki/Indicateur_d%27ordre_des_octets) ou BOM (pour l'anglais byte order mark) est une donnée qui indique l'utilisation d'un encodage Unicode ainsi que l'ordre des octets, généralement situé au début de certains fichiers texte. 
+
+Pour dire simple le BOM spécifie lors de l'écriture que le fichier est encodé en Unicode (UTF-8 dans notre cas). 
+
+Pour faire cela, on utilise la fonction `write_excel_csv2` de `readr`
+
+```{r}
+readr::write_excel_csv2(df, "df-UTF8-BOM.csv")
+```
+
+A l'ouverture dans tout autre environnement  (Excel bureau dans notre cas), L'encodage UTF-8 sera automatiquement utilisé.
+
+
+# Et mes scripts dans tout ça 🤔?
+
+Si vous rédigez/récupérez des scripts rédigés dans deux environnements différents (Rstudio en local  sur votre poste Windows et Linux) vous aurez surement des soucis avec les caractères spéciaux lors du passage d'un environnement à l'autre. 
+
+Pour éviter ces désagréments dans vos scripts, nous vous conseillons fortement de mettre l'encodage UTF-8 par défaut sur votre Rstudio Linux et windows.
+
+Pour le faire, allez dans __Tools > Global Option > Code > Saving > Default text encoding__ et mettez UTF-8.
+
+Si vous disposez d'un script déjà écrit dans un autre encodage, vous pouvez le réouvrir en spécifiant le bon encodage. Ouvrez le fichier puis allez dans  __File > Reopen with encoding__. 
+
+Vous pouvez ensuite faire __File > Save with encoding__ pour l'enregistrer en UTF-8.
+
+# Nos conseils 🙂
+
+> UTF-8, j'utiliserai...
+
++ Réglez votre R local en UTF8 
++ Réglez l'encodage à la lecture de vos fichiers
++ Convertissez vos scripts en UTF-8 s'ils ne le sont pas
++ Si vous rencontrez des problèmes de caractères bizarres, c'est surement lié à un mauvais encodage utilisé à la lecture.
++ Dans R il y a des fonctions qui peuvent aider à identifier l'encodage si vous avez des doutes (`readr::guess_encoding` par exemple)
+
+
+
+# Quelques articles sur l'encodage dans R
+
++ [Unicode, UTF-8… la base de l’encodage](https://freakonometrics.hypotheses.org/52168)
++ [Script Encoding](https://support.rstudio.com/hc/en-us/articles/200532197-Character-Encoding)
++ [Write UTF-8 encoded content to a file](https://kevinushey.github.io/blog/2018/02/21/string-encoding-and-r/)
++ [Character with `readr`](https://readr.tidyverse.org/articles/locales.html#character)
++ [Writing excel formatted csv using `readr::write_excel_csv2`](https://appsilon.com/writing-excel-formatted-csv-using-readrwrite_excel_csv2/)
++ [Encoding in R](https://irene.rbind.io/post/encoding-in-r/)
