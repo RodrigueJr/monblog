@@ -5,6 +5,10 @@
     <link>https://rodrigue.netlify.app/en/</link>
     <description>Recent content on Red</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>fr-FR</language><atom:link href="https://rodrigue.netlify.app/en/index.xml" rel="self" type="application/rss+xml" />
+    <language>fr-FR</language>
+    
+	<atom:link href="https://rodrigue.netlify.app/en/index.xml" rel="self" type="application/rss+xml" />
+    
+    
   </channel>
 </rss>

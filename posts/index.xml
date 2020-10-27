@@ -6,47 +6,10 @@
     <description>Recent content in Posts on Red</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-FR</language>
-    <lastBuildDate>Sun, 25 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://rodrigue.netlify.app/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Introdution au Tidyverse</title>
-      <link>https://rodrigue.netlify.app/posts/r/tidyverse/</link>
-      <pubDate>Sun, 25 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://rodrigue.netlify.app/posts/r/tidyverse/</guid>
-      <description>Tidyverse, j’utiliserai…
-R étant un logiciel libre et flexible, il y a pas mal de librairies qui ont été développés, dès fois pour résoudre le même problème. Pour éviter d’aller dans tous les sens et de s’y perdre finalement, Je vous propose de suivre un ensemble cohérent de librairies regrouper dans une “méga” librairie nommé tidyverse. Cette méga librairie contient 26 librairies dont voici les 7 principales:</description>
-    </item>
+    <lastBuildDate>Sun, 25 Oct 2020 00:00:00 +0000</lastBuildDate>
     
-    <item>
-      <title>L&#39;encodage de caractère</title>
-      <link>https://rodrigue.netlify.app/posts/r/encoding/</link>
-      <pubDate>Sun, 25 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://rodrigue.netlify.app/posts/r/encoding/</guid>
-      <description>L’encodage de caractère c’est quoi ?Un ordinateur ne peut stocker que des nombres, ou plus précisément des 0 et des 1 (des « bits ») qu’on regroupe pour former des nombres en binaire.
-Comment fait-on alors pour écrire du texte ? La réponse est toute bête : on associe à chaque caractère (une lettre, un signe de ponctuation, une espace…) un nombre. Un texte est alors une suite de ces nombres, on parle de chaîne de caractères.</description>
-    </item>
+	<atom:link href="https://rodrigue.netlify.app/posts/index.xml" rel="self" type="application/rss+xml" />
     
-    <item>
-      <title>Les htmlwidgets</title>
-      <link>https://rodrigue.netlify.app/posts/r/htmlwidget/</link>
-      <pubDate>Sun, 05 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://rodrigue.netlify.app/posts/r/htmlwidget/</guid>
-      <description>Les htmlwidgets peuvent être utilisés dans tous les formats de travail R (script R, R Markdown et applications Shiny)
-Pour rendre vos visualisations interactives et dynamiques rien de mieux que d’utiliser des librairies JavaScripts. Pourquoi? Parce que JavaScript a été inventé pour dynamiser les sites internet et depuis, plusieurs librairies javascripts ont été développées dans ce sens. Mais ne vous inquiétez pas, vous n’aurez pas besoin de réellement comprendre le langage JavaScript pour en faire dans Rstudio.</description>
-    </item>
-    
-    <item>
-      <title>R, Rstudio et Markdown</title>
-      <link>https://rodrigue.netlify.app/posts/r/rmarkdown/</link>
-      <pubDate>Sun, 05 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://rodrigue.netlify.app/posts/r/rmarkdown/</guid>
-      <description>Un rapport à rédiger? Un document de travail? Une démonstration interactive? Vous êtes au bon endroit pour apprendre ce qui se fait de mieux avec R.
-Depuis Rstudio vous pouvez créer un éventail de visualisations sous forme de documents (statiques ou dynamiques) markdown.
-Avec Markdown, fini les exports csv pour faire des graphiques dans Excel, fini les Powerpoints avec des mises en formes manuelles et complexes, fini les rapports word…</description>
-    </item>
     
   </channel>
 </rss>

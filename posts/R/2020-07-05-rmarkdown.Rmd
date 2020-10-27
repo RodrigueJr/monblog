@@ -1,10 +1,17 @@
 ---
 title: "R, Rstudio et Markdown"
 author: Rodrigue EDORH
+hero: /images/post-rmarkdown/rmarkdown.png
 date: '2020-07-05'
 slug: rmarkdown
 categories: ["R"]
 tags: ["R Markdown"]
+menu:
+  sidebar:
+    name: R, Rstudio et Markdown
+    identifier: r-rs-rm
+    parent: r
+    weight: 105
 ---
 
 

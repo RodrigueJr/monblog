@@ -2,9 +2,16 @@
 title: "Introdution au Tidyverse"
 author: Rodrigue EDORH
 date: 2020-10-25
+hero: /images/post-rmarkdown/hex-tidyverse.png
 slug: tidyverse
 categories: ["R"]
 tags: ["R Markdown"]
+menu:
+  sidebar:
+    name: Tidyverse
+    identifier: r-tidy
+    parent: r
+    weight: 110
 ---
 
 >  Tidyverse, j'utiliserai... 

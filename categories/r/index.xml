@@ -6,7 +6,11 @@
     <description>Recent content in R on Red</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-FR</language>
-    <lastBuildDate>Sun, 25 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://rodrigue.netlify.app/categories/r/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Oct 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://rodrigue.netlify.app/categories/r/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Introdution au Tidyverse</title>
       <link>https://rodrigue.netlify.app/posts/r/tidyverse/</link>
@@ -18,7 +22,7 @@
     </item>
     
     <item>
-      <title>L&#39;encodage de caractère</title>
+      <title>L&#39;encodage de caractère dans Rstudio</title>
       <link>https://rodrigue.netlify.app/posts/r/encoding/</link>
       <pubDate>Sun, 25 Oct 2020 00:00:00 +0000</pubDate>
       
