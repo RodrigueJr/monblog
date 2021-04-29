@@ -2,21 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Red</title>
-    <link>https://rodrigue.netlify.app/categories/</link>
+    <link>https://rodrigue.rhodatascience.com/categories/</link>
     <description>Recent content in Categories on Red</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-FR</language>
-    <lastBuildDate>Sun, 25 Oct 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://rodrigue.netlify.app/categories/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Thu, 29 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://rodrigue.rhodatascience.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python</title>
+      <link>https://rodrigue.rhodatascience.com/categories/python/</link>
+      <pubDate>Thu, 29 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://rodrigue.rhodatascience.com/categories/python/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>R</title>
-      <link>https://rodrigue.netlify.app/categories/r/</link>
+      <link>https://rodrigue.rhodatascience.com/categories/r/</link>
       <pubDate>Sun, 25 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://rodrigue.netlify.app/categories/r/</guid>
+      <guid>https://rodrigue.rhodatascience.com/categories/r/</guid>
       <description></description>
     </item>
     

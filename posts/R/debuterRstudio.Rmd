@@ -1,0 +1,277 @@
+---
+title: "Débuter dans Rstudio"
+author: Rodrigue EDORH
+date: 2020-10-25
+hero: /images/post-rmarkdown/hex-tidyverse.png
+slug: tidyverse
+categories: ["R"]
+tags: ["R Markdown"]
+menu:
+  sidebar:
+    name: Tidyverse
+    identifier: r-tidy
+    parent: r
+    weight: 100
+---
+
+
+#  Rstudio: l'IDE dédié à R
+Rstudio est un environnement de développement (IDE) dédié pour le langage [R](https://www.r-project.org/about.html). Il se base sur le logiciel libre [GNU R](https://www.r-project.org/). 
+
+Son interface comporte 3 cadrans et se présente comme suit :
+
+![](www/image/interfaceRstudio1.png)
+
+<br>
+
+1.  Le Cadran 1 : est constitué d'une __Console__ et d'un __Terminal__. 
+
+    - __Console__ : dans la console vous pourrez écrire toutes vos commandes (mais on verra plus tard qu'il est mieux d'écrire ses commandes dans un script avant de les compiler dans la console).
+    - __Terminal__ : il donne accès à une interface système (shell) (pratique pour saisir des lignes de commandes notamment pour faire du Git ou compiler un script externe comme du Python). On peut créer plusieurs terminaux. ([référence](https://support.rstudio.com/hc/en-us/articles/115010737148-Using-the-RStudio-Terminal))
+
+2.  Le Cadran 2 : contient les onglets __Environnement__, __History__ et __Connections__.
+
+    - __Environnement__ : il vous affiche tous les objets (table de données, vecteurs, liste...) que vous aurez créés/importés dans Rstudio (et qui sont stockés dans la mémoire de votre environnement).
+    - __History__ : il vous affiche tout l'historique de votre travail, c'est à dire tous les codes R compilés dans la console au cadran 1
+    - __Connections__ : cet onglet est une assistance pour se connecter à des tables distantes (plus de détails dans [Accès au DataLake](ConnectionDatalake.html))
+
+
+3.  Le Cadran 3 : il contient cinq onglets :
+    - __Files__: il permet de visualiser votre dossier physique de travail. Par défaut il sera dans votre _"Home"_. Depuis cet onglet, vous aller pouvoir créer un nouveau dossier, télécharger des fichiers depuis votre ordinateur, supprimer/renommer/déplacer/copier des fichiers. 
+    - __Plots__: il affichera toutes vos sorties graphiques (histogramme, pie chart, box plot ...).
+    - __Packages__: il vous affiche l'ensemble des librairies disponibles dans votre environnement. Vous avez la liberté de télécharger d'autres librairies avec le bouton __Install__.
+    - __Help__: il vous affichera toute la documentation dédié Rstudio
+    - __viewer__ : C'est une interface interne qui permet de visualiser vos applications Shiny.
+
+Ce petit aide-mémoire pourra vous être utile :
+
+ [![](www/image/rstudioIDE.PNG 'cliquez pour suivre le lien')](https://www.rstudio.com/wp-content/uploads/2016/02/IDE-french.pdf){#id .class width=100% height=500} 
+ 
+ 
+# Comment fonctionne R 
+
+R est  langage informatique dédié aux statistiques et à la science des données. C'est un langage interprété, c'est à dire que les commandes saisies au clavier sont directement exécutées sans qu'il y ait besoin de construire un programme complet (contrairement aux langages compilés comme C ou c++). On peut donc vérifier pas à pas ces lignes de commandes.
+
+R fonctionne avec des objets qui peuvent être des variables, des listes, des data.frames, des tibbles...
+
+
+##Commençons par "coder"
+
+```{r, echo=F}
+library(dplyr, warn.conflicts = F)
+```
+
+
+
+> ###### _Note_ : Dans __Global Option>Appearance__, vous pouvez aussi changer l'apparence de votre environnement Rstudio (par exemple en fond noir moins consommatrice d'énergie et qui en passant fatigue moins les yeux 😉
+
+
+
+Si vous cliquez dans le cadran 1 vous verrez le curseur clignoté  juste après le symbole `>`. C'est là que sera écrit votre code.
+
+Commençons par un calcul tout simple d'addition :
+```{r }
+1+1
+```
+
+Le résultat est directement affiché dans la console. 
+
+### Création d'objet
+* Créer et afficher une variable
+
+La création d'objet dans R est assez simple. Si on veut créer une variable numérique __a__ qui vaut __5__, il suffit de faire ceci `a<-5`. L'opérateur `<-` permet d'affecter une valeur à une variable. Pour afficher le contenue de `a` il suffit de saisir `a` dans la console puis de valider. 
+
+```{r}
+a<-5
+a
+```
+
+Pour créer une variable qui contient du texte, la syntaxe est la même avec une petite nuance; on écrit le texte dans des guillemets.
+
+```{r}
+toto<-"Je suis Génial"
+toto
+```
+
+* Créer un vecteur
+
+Pour créer un vecteur (suite de valeur), on s'aide de la fonction `c()` qui permet de combiner des arguments. 
+La syntaxe est la suivante pour créer un vecteur `a` comprenant les valeurs 1,2,3,4,5:
+
+```{r}
+a<-c(1,2,3,4,5)
+a
+```
+
+## Mon premier script
+
+Comme on l'a vue précédemment, on écrit et exécute un code dans la console. Cependant travailler de cette manière ne permet pas de stocker son historique surtout si on doit rédiger une suite de code. 
+
+Pour pouvoir garder tout son historique, on va plutôt travailler dans des fichiers Scripts.
+
+Le raccourci pour créer un nouveau script est  __Ctrl + Shift + N__. Un nouveau cadran apparait en haut à gauche de votre environnement
+
+![](www/image/newScript.PNG)
+
+<br>
+
+Vous pouvez dans ce script écrire tous vos codes, l'enregistrer. L'intérêt d'un script est aussi sa portabilité. Voyez un script R comme un bloc-notes dans lequel on écrit des codes compréhensibles par R.
+
+On ne s'étend pas trop sur comment programmer dans R mais pour une prise en main rapide nous vous conseillons ces tutoriels sur:
+
+ *  [Cran doc 1](https://cran.r-project.org/doc/contrib/Paradis-rdebuts_fr.pdf) ou [Cran doc2](https://cran.r-project.org/doc/contrib/Goulet_introduction_programmation_R.pdf)
+ *  [Openclassrooms](https://openclassrooms.com/courses/effectuez-vos-etudes-statistiques-avec-r/premiers-pas-avec-r).
+ * [datacamp](https://www.datacamp.com) (Il faut par contre créer un compte pour avoir accès). Vous disposez aussi d'une application smartphone ___DataCamp - Learn R & Python___ assez "_User Friendly_" qui vous permet de comprendre et d'acquérir rapidement les bases de la programmation.
+ 
+ 
+# Les Packages R
+
+## Le concept de __packages__ (librairie)
+
+R fait appel à des __librairies__. Ces librairies contiennent des fonctions, méthodes, données ...  qui permettent de travailler facilement. 
+
+Il existe un répertoire  officiel qui liste toutes les librairies disponibles. Il s'agit du __Comprehensive R Archive Network (CRAN)__.
+
+
+
+Deux manières pour installer une librairie : 
+
+* Utiliser l'assistant : Dans le cadran 3 (en bas à droite) cliquer sur __Packages__ puis sur __Install__. Dans la barre de dialogue qui s'affiche, saisissez votre librairie puis __Install__.
+
+* Saisir en ligne de commande: la fonction `install.packages()` permet d'installer une librairie.  Ex : `install.packages(readr)`
+
+
+
+# Organiser son espace de travail
+
+
+
+Pour travailler de manière efficace, travaillez sous forme de projet ce qui vous permettra d'être plus organisé.
+
+## Travailler sous forme de  __projet__
+
+Les projets RStudio simplifient la division de votre travail en plusieurs contextes, chacun avec son propre répertoire de travail, espace de travail, historique et documents sources.
+Travailler  sous forme de projet, c'est se simplifier la vie. Vous pouvez switcher d'un projet à l'autre sans aucun souci. En plus vous pouvez ouvrir plusieurs projets à la fois sous forme de session (on reviendra sur le concept des sessions plus tard). 
+
+Pour créer un projet voici les étapes: 
+
+- Aller dans __Files>New Project__
+
+ ![](www/image/createProject1.png)  
+
+<br>
+
+- Choisissez __New Directory__ puis __New Project__
+
+ ![](www/image/newProjet.PNG) 
+
+<br>
+
+- Saisir le nom de votre Projet puis cliquez sur __Create Project__
+
+ ![](www/image/newProjet1.PNG) 
+
+<br>
+Vous venez ainsi de créer votre nouveau projet. Un dossier __Mon_Premier_Projet__ a été créé dans votre _Home_ et contiendra tous vos scripts.
+
+ ![](www/image/firstProjec1t.png)
+
+<br>
+
+Un fichier d'extension __Rproj__ est également créé ![](www/image/firstProject2.png)
+
+
+### Fonctionnement par défaut des projets
+
+Lorsque l’on ouvre un projet, RStudio effectue différentes actions :
+
+  + le nom du projet est affiché en haut à droite à côté de l’icône projets ;
+  +  une nouvelle session R est exécutée (ainsi s’il on passe d’un projet à un autre, les objets du projet qu’on vient de fermer ne sont plus en mémoire) ;
+  + le répertoire de travail de R est défini comme étant le répertoire du projet (d’où le fait que l’on n’a pas à se préoccuper de définir le répertoire de travail lorsque l’on travaille avec des projets RStudio) ;
+  + les objets créés (et sauvegardés dans le fichier .Rdata) lors d’une précédente séance de travail sont chargés en mémoire ;
+  + l’historique des commandes saisies lors de nos précédentes séances de travail sont chargées dans l’onglet History ;
+  + les scripts ouverts lors d’une précédente séance de travail sont automatiquement ouverts ;
+    divers paramètres de RStudio sont restaurés dans l’état dans lequel ils étaient la dernière fois qu’on a travaillé sur ce projet.
+
+Autrement dit, lorsqu’on ouvre un projet RStudio, on revient à l’état de notre projet tel qu’il était la dernière fois que l’on a travaillé dessus.
+
+Plutôt Pratique, n'est pas ?
+
+Petite précision toutefois, les librairies que l’on avait chargées en mémoire avec la fonction `library` ne sont pas systématiquement rechargées en mémoire. Il faudra donc les appeler à nouveau lors de notre séance de travail.
+
+
+# Rendre lisible et portable son projet
+
+
+Un projet lisible, c'est un projet dans lequel on se retrouve facilement. Un projet portable ou autoportant est un projet qui peut être "rejoué" hors de votre session c'est à dire que si vous passez l'ensemble du dossier de votre projet à un collaborateur, il devrait pouvoir le lancer sans erreur et avoir les mêmes sorties que vous.  
+
+
+## Portabilité d'un projet
+
++  __Commencer toujours par un environnement propre au lieu d'enregistrer l'espace de travail.__
+
+Ceci permet de se rassurer que son projet fonctionne bien. En restaurant systématiquement l'environnement de votre projet (c'est à dire en restaurant le `.RData`) vous pouvez vous retrouver dans une situation où vous avez créé un objet depuis la console et pas dans un script; puis de l'utiliser. Si ce code est repris plus tard, on se saura pas d'où il vient; ce qui est un peu embêtant. 
+
+À noter que mettre `rm(list=ls())` ne permet pas de partir d'un environnement vierge. Il supprime juste les objets dans votre espace de travail. Votre projet restera vulnérable aux dépendances ou processus lancés depuis votre console (appel de librairie, mise d'une option ... ).
+
+Le travail sous forme Rmarkdown ou Rnotebook permet aussi d'appliquer cette bonne pratique. Utilisez ces formats de travail si possible.
+
+
++  __Utiliser des chemins d'accès relatifs pour accéder aux fichiers__
+    + Ne surtout pas faire de `setwd`.
+    + Travailler en relatif depuis la racine du projet: 
+    le package `here` peut vous aider pour appliquer cela.
+ `here` récupère le chemin relatif du projet. Ainsi, si le projet est utilisé par un de vos collaborateurs, le chemin s'adapte à son répertoire. 
+
+> L'article [Project-oriented workflow](https://www.tidyverse.org/articles/2017/12/workflow-vs-script/) du [Tidyverse](https://www.tidyverse.org) revient sur ces deux points.
+
++  __Conserver tous les fichiers sources d'un projet dans un répertoire__
+
+Lorsque vous travaillez sur un projet, éviter autant que possible de référer à des éléments d'un autre projet. Tout le nécessaire d'un projet doit être dans le dossier du projet. 
+
+
++ __Mettre en place une arborescence simple et claire du projet__
+    + Séparer les données (dans un dossier __data__ par exemple) de vos scripts sources 
+    + Mettre les fonctions dans des fichiers séparés
+    + Utiliser un fichier qui appelle toutes les librairies que vous utilisez (si vous avez plusieurs fichiers de scripts).
+    + Avoir un fichier de config (si besoin)
+    
++ __Faire des packages quand on veut réutiliser du code entre projet__
+
+Un package R suit une structure bien définie. Ainsi,   tout ce que vous avez développé est accessible via des fonctions avec des aides appropriées. Le système de packages vous permet donc d'avoir des fonctions, de la documentation (vignettes et pages d'aide) et garantie une bonne portabilité de vos travaux (si tous les contrôles sont bien fait) entre projet.
+
+> Pour vous aider à construire des packages, voici quelques ressources en ligne : le livre [R packages](http://r-pkgs.had.co.nz/) de _Hadley Wickham_ et l'article [Créer un package R en quelques minutes](https://thinkr.fr/creer-package-r-quelques-minutes/) du [thinkr](https://thinkr.fr/).
+
+## Lisibilité du code
+
+  + __Bien indenter son code__ 
+  
+  Un code bien indenté est facile à lire. Un raccourci pour indenter une ligne de code est __Ctrl +I__. Pour reformater un script en entier, utilisez __Ctrl+Shift+A__.
+  
+  + __Commenter son code__
+  
+  Utile même si vous travaillez seul. Vous vous retrouver plus facilement si vous reprenez votre projet plusieurs mois après. Pour rajouter un commentaire il vous suffit de rajouter __#__ avant votre commentaire (ou en raccourci __Ctrl+Shift+C__)
+  
+  + __Mettre des sections dans votre code__
+  
+  Votre code n'en sera que plus aéré, agréable et facile à lire. Le raccourci pour mettre une section est __Ctrl+Shift+R__.
+  
+  + __Utiliser les __Snippets__ s'ils existent__
+  
+  Les snippets sont des bouts de code préenregistrés qui vous aident dans la structuration d'un module. Pour les utiliser il suffit de commencer par écrire la fonction/module et il vous sera proposé un snippet s'il en existe.
+  Quelques snippets: 
+  
+  + `fun` : génère l'arborescence  pour écrire une fonction, 
+  + `shinyApp`: génère une arborescence avec le minimum pour faire une appli shiny
+  + `if`, `el`, and `ei` pour les expressions conditionnelles
+  + ...
+      
+&emsp; Pour avoir la liste des snippets par défauts aller dans ___Tools>Global Option>Code___ puis cliquer sur __Edit Snippets ...__.
+Vous pouvez modifier/rajouter des snippets en modifiant/rajoutant ce qu'il vous faut dans l'interface qui s'est ouverte. Pour en savoir plus: [Code Snippets](https://support.rstudio.com/hc/en-us/articles/204463668-Code-Snippets) 
+
+
+> Pour avoir plus de conseils n'hésitez pas à lire [Efficient R programming](https://csgillespie.github.io/efficientR/) de _Colin Gillespie & Robin Lovelace_ et plus précisément le chapitre [Efficient collaboration](https://csgillespie.github.io/efficientR/collaboration.html).
+
+> Le livre [Advanced R](http://adv-r.had.co.nz/) de _Hadley Wickham_ est aussi très intéressant pour améliorer vos compétences sur la programmation fonctionnelle, la performance de vos scripts ...
+
+

@@ -1,95 +1,80 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
-    <loc>https://rodrigue.netlify.app/categories/</loc>
-    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
+    <loc>https://rodrigue.rhodatascience.com/categories/</loc>
+    <lastmod>2021-04-29T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://rodrigue.netlify.app/en/categories/"
+                href="https://rodrigue.rhodatascience.com/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://rodrigue.netlify.app/categories/"
+                href="https://rodrigue.rhodatascience.com/categories/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://rodrigue.netlify.app/posts/r/tidyverse/</loc>
-    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://rodrigue.netlify.app/posts/r/encoding/</loc>
-    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://rodrigue.netlify.app/posts/</loc>
-    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://rodrigue.netlify.app/categories/r/</loc>
-    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://rodrigue.netlify.app/posts/r/</loc>
-    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://rodrigue.netlify.app/tags/r-markdown/</loc>
-    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://rodrigue.netlify.app/</loc>
-    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rodrigue.rhodatascience.com/posts/</loc>
+    <lastmod>2021-04-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rodrigue.rhodatascience.com/tags/python/</loc>
+    <lastmod>2021-04-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rodrigue.rhodatascience.com/categories/python/</loc>
+    <lastmod>2021-04-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rodrigue.rhodatascience.com/posts/python/2021-04-21-coming_soon/</loc>
+    <lastmod>2021-04-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rodrigue.rhodatascience.com/</loc>
+    <lastmod>2021-04-29T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://rodrigue.netlify.app/en/"
+                href="https://rodrigue.rhodatascience.com/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://rodrigue.netlify.app/"
+                href="https://rodrigue.rhodatascience.com/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://rodrigue.netlify.app/tags/</loc>
-    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rodrigue.rhodatascience.com/tags/</loc>
+    <lastmod>2021-04-29T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://rodrigue.netlify.app/en/tags/"
+                href="https://rodrigue.rhodatascience.com/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://rodrigue.netlify.app/tags/"
+                href="https://rodrigue.rhodatascience.com/tags/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://rodrigue.netlify.app/posts/r/htmlwidget/</loc>
+  </url><url>
+    <loc>https://rodrigue.rhodatascience.com/posts/r/tidyverse/</loc>
+    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rodrigue.rhodatascience.com/posts/r/encoding/</loc>
+    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rodrigue.rhodatascience.com/categories/r/</loc>
+    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rodrigue.rhodatascience.com/posts/r/</loc>
+    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rodrigue.rhodatascience.com/tags/r-markdown/</loc>
+    <lastmod>2020-10-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rodrigue.rhodatascience.com/posts/r/htmlwidget/</loc>
+    <lastmod>2020-07-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rodrigue.rhodatascience.com/posts/r/rmarkdown/</loc>
+    <lastmod>2020-07-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rodrigue.rhodatascience.com/tags/shiny/</loc>
     <lastmod>2020-07-05T00:00:00+00:00</lastmod>
   </url>
-  
-  <url>
-    <loc>https://rodrigue.netlify.app/posts/r/rmarkdown/</loc>
-    <lastmod>2020-07-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://rodrigue.netlify.app/tags/shiny/</loc>
-    <lastmod>2020-07-05T00:00:00+00:00</lastmod>
-  </url>
-  
 </urlset>

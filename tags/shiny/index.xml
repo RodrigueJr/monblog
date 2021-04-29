@@ -2,21 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Shiny on Red</title>
-    <link>https://rodrigue.netlify.app/tags/shiny/</link>
+    <link>https://rodrigue.rhodatascience.com/tags/shiny/</link>
     <description>Recent content in Shiny on Red</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-FR</language>
-    <lastBuildDate>Sun, 05 Jul 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://rodrigue.netlify.app/tags/shiny/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 05 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://rodrigue.rhodatascience.com/tags/shiny/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Les htmlwidgets</title>
-      <link>https://rodrigue.netlify.app/posts/r/htmlwidget/</link>
+      <link>https://rodrigue.rhodatascience.com/posts/r/htmlwidget/</link>
       <pubDate>Sun, 05 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://rodrigue.netlify.app/posts/r/htmlwidget/</guid>
+      <guid>https://rodrigue.rhodatascience.com/posts/r/htmlwidget/</guid>
       <description>Les htmlwidgets peuvent être utilisés dans tous les formats de travail R (script R, R Markdown et applications Shiny)
 Pour rendre vos visualisations interactives et dynamiques rien de mieux que d’utiliser des librairies JavaScripts. Pourquoi? Parce que JavaScript a été inventé pour dynamiser les sites internet et depuis, plusieurs librairies javascripts ont été développées dans ce sens. Mais ne vous inquiétez pas, vous n’aurez pas besoin de réellement comprendre le langage JavaScript pour en faire dans Rstudio.</description>
     </item>

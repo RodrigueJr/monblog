@@ -1,0 +1,234 @@
+---
+title: "Débuter dans Rstudio"
+author: Rodrigue EDORH
+date: 2020-10-25
+hero: /images/post-rmarkdown/hex-tidyverse.png
+slug: tidyverse
+categories: ["R"]
+tags: ["R Markdown"]
+menu:
+  sidebar:
+    name: Tidyverse
+    identifier: r-tidy
+    parent: r
+    weight: 100
+---
+
+
+
+<div id="rstudio-lide-dédié-à-r" class="section level1">
+<h1>Rstudio: l’IDE dédié à R</h1>
+<p>Rstudio est un environnement de développement (IDE) dédié pour le langage <a href="https://www.r-project.org/about.html">R</a>. Il se base sur le logiciel libre <a href="https://www.r-project.org/">GNU R</a>.</p>
+<p>Son interface comporte 3 cadrans et se présente comme suit :</p>
+<p><img src="www/image/interfaceRstudio1.png" /></p>
+<p><br></p>
+<ol style="list-style-type: decimal">
+<li><p>Le Cadran 1 : est constitué d’une <strong>Console</strong> et d’un <strong>Terminal</strong>.</p>
+<ul>
+<li><strong>Console</strong> : dans la console vous pourrez écrire toutes vos commandes (mais on verra plus tard qu’il est mieux d’écrire ses commandes dans un script avant de les compiler dans la console).</li>
+<li><strong>Terminal</strong> : il donne accès à une interface système (shell) (pratique pour saisir des lignes de commandes notamment pour faire du Git ou compiler un script externe comme du Python). On peut créer plusieurs terminaux. (<a href="https://support.rstudio.com/hc/en-us/articles/115010737148-Using-the-RStudio-Terminal">référence</a>)</li>
+</ul></li>
+<li><p>Le Cadran 2 : contient les onglets <strong>Environnement</strong>, <strong>History</strong> et <strong>Connections</strong>.</p>
+<ul>
+<li><strong>Environnement</strong> : il vous affiche tous les objets (table de données, vecteurs, liste…) que vous aurez créés/importés dans Rstudio (et qui sont stockés dans la mémoire de votre environnement).</li>
+<li><strong>History</strong> : il vous affiche tout l’historique de votre travail, c’est à dire tous les codes R compilés dans la console au cadran 1</li>
+<li><strong>Connections</strong> : cet onglet est une assistance pour se connecter à des tables distantes (plus de détails dans <a href="ConnectionDatalake.html">Accès au DataLake</a>)</li>
+</ul></li>
+<li><p>Le Cadran 3 : il contient cinq onglets :</p>
+<ul>
+<li><strong>Files</strong>: il permet de visualiser votre dossier physique de travail. Par défaut il sera dans votre <em>“Home”</em>. Depuis cet onglet, vous aller pouvoir créer un nouveau dossier, télécharger des fichiers depuis votre ordinateur, supprimer/renommer/déplacer/copier des fichiers.</li>
+<li><strong>Plots</strong>: il affichera toutes vos sorties graphiques (histogramme, pie chart, box plot …).</li>
+<li><strong>Packages</strong>: il vous affiche l’ensemble des librairies disponibles dans votre environnement. Vous avez la liberté de télécharger d’autres librairies avec le bouton <strong>Install</strong>.</li>
+<li><strong>Help</strong>: il vous affichera toute la documentation dédié Rstudio</li>
+<li><strong>viewer</strong> : C’est une interface interne qui permet de visualiser vos applications Shiny.</li>
+</ul></li>
+</ol>
+<p>Ce petit aide-mémoire pourra vous être utile :</p>
+<p><a href="https://www.rstudio.com/wp-content/uploads/2016/02/IDE-french.pdf" id="id" class="class" width="100%" height="500"><img src="www/image/rstudioIDE.PNG" title="cliquez pour suivre le lien" /></a></p>
+</div>
+<div id="comment-fonctionne-r" class="section level1">
+<h1>Comment fonctionne R</h1>
+<p>R est langage informatique dédié aux statistiques et à la science des données. C’est un langage interprété, c’est à dire que les commandes saisies au clavier sont directement exécutées sans qu’il y ait besoin de construire un programme complet (contrairement aux langages compilés comme C ou c++). On peut donc vérifier pas à pas ces lignes de commandes.</p>
+<p>R fonctionne avec des objets qui peuvent être des variables, des listes, des data.frames, des tibbles…</p>
+<p>##Commençons par “coder”</p>
+<blockquote>
+<h6 id="note-dans-global-optionappearance-vous-pouvez-aussi-changer-lapparence-de-votre-environnement-rstudio-par-exemple-en-fond-noir-moins-consommatrice-dénergie-et-qui-en-passant-fatigue-moins-les-yeux"><em>Note</em> : Dans <strong>Global Option&gt;Appearance</strong>, vous pouvez aussi changer l’apparence de votre environnement Rstudio (par exemple en fond noir moins consommatrice d’énergie et qui en passant fatigue moins les yeux 😉</h6>
+</blockquote>
+<p>Si vous cliquez dans le cadran 1 vous verrez le curseur clignoté juste après le symbole <code>&gt;</code>. C’est là que sera écrit votre code.</p>
+<p>Commençons par un calcul tout simple d’addition :</p>
+<pre class="r"><code>1+1</code></pre>
+<pre><code>## [1] 2</code></pre>
+<p>Le résultat est directement affiché dans la console.</p>
+<div id="création-dobjet" class="section level3">
+<h3>Création d’objet</h3>
+<ul>
+<li>Créer et afficher une variable</li>
+</ul>
+<p>La création d’objet dans R est assez simple. Si on veut créer une variable numérique <strong>a</strong> qui vaut <strong>5</strong>, il suffit de faire ceci <code>a&lt;-5</code>. L’opérateur <code>&lt;-</code> permet d’affecter une valeur à une variable. Pour afficher le contenue de <code>a</code> il suffit de saisir <code>a</code> dans la console puis de valider.</p>
+<pre class="r"><code>a&lt;-5
+a</code></pre>
+<pre><code>## [1] 5</code></pre>
+<p>Pour créer une variable qui contient du texte, la syntaxe est la même avec une petite nuance; on écrit le texte dans des guillemets.</p>
+<pre class="r"><code>toto&lt;-&quot;Je suis Génial&quot;
+toto</code></pre>
+<pre><code>## [1] &quot;Je suis Génial&quot;</code></pre>
+<ul>
+<li>Créer un vecteur</li>
+</ul>
+<p>Pour créer un vecteur (suite de valeur), on s’aide de la fonction <code>c()</code> qui permet de combiner des arguments.
+La syntaxe est la suivante pour créer un vecteur <code>a</code> comprenant les valeurs 1,2,3,4,5:</p>
+<pre class="r"><code>a&lt;-c(1,2,3,4,5)
+a</code></pre>
+<pre><code>## [1] 1 2 3 4 5</code></pre>
+</div>
+<div id="mon-premier-script" class="section level2">
+<h2>Mon premier script</h2>
+<p>Comme on l’a vue précédemment, on écrit et exécute un code dans la console. Cependant travailler de cette manière ne permet pas de stocker son historique surtout si on doit rédiger une suite de code.</p>
+<p>Pour pouvoir garder tout son historique, on va plutôt travailler dans des fichiers Scripts.</p>
+<p>Le raccourci pour créer un nouveau script est <strong>Ctrl + Shift + N</strong>. Un nouveau cadran apparait en haut à gauche de votre environnement</p>
+<p><img src="www/image/newScript.PNG" /></p>
+<p><br></p>
+<p>Vous pouvez dans ce script écrire tous vos codes, l’enregistrer. L’intérêt d’un script est aussi sa portabilité. Voyez un script R comme un bloc-notes dans lequel on écrit des codes compréhensibles par R.</p>
+<p>On ne s’étend pas trop sur comment programmer dans R mais pour une prise en main rapide nous vous conseillons ces tutoriels sur:</p>
+<ul>
+<li><a href="https://cran.r-project.org/doc/contrib/Paradis-rdebuts_fr.pdf">Cran doc 1</a> ou <a href="https://cran.r-project.org/doc/contrib/Goulet_introduction_programmation_R.pdf">Cran doc2</a></li>
+<li><a href="https://openclassrooms.com/courses/effectuez-vos-etudes-statistiques-avec-r/premiers-pas-avec-r">Openclassrooms</a>.</li>
+<li><a href="https://www.datacamp.com">datacamp</a> (Il faut par contre créer un compte pour avoir accès). Vous disposez aussi d’une application smartphone <strong><em>DataCamp - Learn R &amp; Python</em></strong> assez “<em>User Friendly</em>” qui vous permet de comprendre et d’acquérir rapidement les bases de la programmation.</li>
+</ul>
+</div>
+</div>
+<div id="les-packages-r" class="section level1">
+<h1>Les Packages R</h1>
+<div id="le-concept-de-packages-librairie" class="section level2">
+<h2>Le concept de <strong>packages</strong> (librairie)</h2>
+<p>R fait appel à des <strong>librairies</strong>. Ces librairies contiennent des fonctions, méthodes, données … qui permettent de travailler facilement.</p>
+<p>Il existe un répertoire officiel qui liste toutes les librairies disponibles. Il s’agit du <strong>Comprehensive R Archive Network (CRAN)</strong>.</p>
+<p>Deux manières pour installer une librairie :</p>
+<ul>
+<li><p>Utiliser l’assistant : Dans le cadran 3 (en bas à droite) cliquer sur <strong>Packages</strong> puis sur <strong>Install</strong>. Dans la barre de dialogue qui s’affiche, saisissez votre librairie puis <strong>Install</strong>.</p></li>
+<li><p>Saisir en ligne de commande: la fonction <code>install.packages()</code> permet d’installer une librairie. Ex : <code>install.packages(readr)</code></p></li>
+</ul>
+</div>
+</div>
+<div id="organiser-son-espace-de-travail" class="section level1">
+<h1>Organiser son espace de travail</h1>
+<p>Pour travailler de manière efficace, travaillez sous forme de projet ce qui vous permettra d’être plus organisé.</p>
+<div id="travailler-sous-forme-de-projet" class="section level2">
+<h2>Travailler sous forme de <strong>projet</strong></h2>
+<p>Les projets RStudio simplifient la division de votre travail en plusieurs contextes, chacun avec son propre répertoire de travail, espace de travail, historique et documents sources.
+Travailler sous forme de projet, c’est se simplifier la vie. Vous pouvez switcher d’un projet à l’autre sans aucun souci. En plus vous pouvez ouvrir plusieurs projets à la fois sous forme de session (on reviendra sur le concept des sessions plus tard).</p>
+<p>Pour créer un projet voici les étapes:</p>
+<ul>
+<li>Aller dans <strong>Files&gt;New Project</strong></li>
+</ul>
+<p><img src="www/image/createProject1.png" /></p>
+<p><br></p>
+<ul>
+<li>Choisissez <strong>New Directory</strong> puis <strong>New Project</strong></li>
+</ul>
+<p><img src="www/image/newProjet.PNG" /></p>
+<p><br></p>
+<ul>
+<li>Saisir le nom de votre Projet puis cliquez sur <strong>Create Project</strong></li>
+</ul>
+<p><img src="www/image/newProjet1.PNG" /></p>
+<p><br>
+Vous venez ainsi de créer votre nouveau projet. Un dossier <strong>Mon_Premier_Projet</strong> a été créé dans votre <em>Home</em> et contiendra tous vos scripts.</p>
+<p><img src="www/image/firstProjec1t.png" /></p>
+<p><br></p>
+<p>Un fichier d’extension <strong>Rproj</strong> est également créé <img src="www/image/firstProject2.png" /></p>
+<div id="fonctionnement-par-défaut-des-projets" class="section level3">
+<h3>Fonctionnement par défaut des projets</h3>
+<p>Lorsque l’on ouvre un projet, RStudio effectue différentes actions :</p>
+<ul>
+<li>le nom du projet est affiché en haut à droite à côté de l’icône projets ;</li>
+<li>une nouvelle session R est exécutée (ainsi s’il on passe d’un projet à un autre, les objets du projet qu’on vient de fermer ne sont plus en mémoire) ;</li>
+<li>le répertoire de travail de R est défini comme étant le répertoire du projet (d’où le fait que l’on n’a pas à se préoccuper de définir le répertoire de travail lorsque l’on travaille avec des projets RStudio) ;</li>
+<li>les objets créés (et sauvegardés dans le fichier .Rdata) lors d’une précédente séance de travail sont chargés en mémoire ;</li>
+<li>l’historique des commandes saisies lors de nos précédentes séances de travail sont chargées dans l’onglet History ;</li>
+<li>les scripts ouverts lors d’une précédente séance de travail sont automatiquement ouverts ;
+divers paramètres de RStudio sont restaurés dans l’état dans lequel ils étaient la dernière fois qu’on a travaillé sur ce projet.</li>
+</ul>
+<p>Autrement dit, lorsqu’on ouvre un projet RStudio, on revient à l’état de notre projet tel qu’il était la dernière fois que l’on a travaillé dessus.</p>
+<p>Plutôt Pratique, n’est pas ?</p>
+<p>Petite précision toutefois, les librairies que l’on avait chargées en mémoire avec la fonction <code>library</code> ne sont pas systématiquement rechargées en mémoire. Il faudra donc les appeler à nouveau lors de notre séance de travail.</p>
+</div>
+</div>
+</div>
+<div id="rendre-lisible-et-portable-son-projet" class="section level1">
+<h1>Rendre lisible et portable son projet</h1>
+<p>Un projet lisible, c’est un projet dans lequel on se retrouve facilement. Un projet portable ou autoportant est un projet qui peut être “rejoué” hors de votre session c’est à dire que si vous passez l’ensemble du dossier de votre projet à un collaborateur, il devrait pouvoir le lancer sans erreur et avoir les mêmes sorties que vous.</p>
+<div id="portabilité-dun-projet" class="section level2">
+<h2>Portabilité d’un projet</h2>
+<ul>
+<li><strong>Commencer toujours par un environnement propre au lieu d’enregistrer l’espace de travail.</strong></li>
+</ul>
+<p>Ceci permet de se rassurer que son projet fonctionne bien. En restaurant systématiquement l’environnement de votre projet (c’est à dire en restaurant le <code>.RData</code>) vous pouvez vous retrouver dans une situation où vous avez créé un objet depuis la console et pas dans un script; puis de l’utiliser. Si ce code est repris plus tard, on se saura pas d’où il vient; ce qui est un peu embêtant.</p>
+<p>À noter que mettre <code>rm(list=ls())</code> ne permet pas de partir d’un environnement vierge. Il supprime juste les objets dans votre espace de travail. Votre projet restera vulnérable aux dépendances ou processus lancés depuis votre console (appel de librairie, mise d’une option … ).</p>
+<p>Le travail sous forme Rmarkdown ou Rnotebook permet aussi d’appliquer cette bonne pratique. Utilisez ces formats de travail si possible.</p>
+<ul>
+<li><strong>Utiliser des chemins d’accès relatifs pour accéder aux fichiers</strong>
+<ul>
+<li>Ne surtout pas faire de <code>setwd</code>.</li>
+<li>Travailler en relatif depuis la racine du projet:
+le package <code>here</code> peut vous aider pour appliquer cela.
+<code>here</code> récupère le chemin relatif du projet. Ainsi, si le projet est utilisé par un de vos collaborateurs, le chemin s’adapte à son répertoire.</li>
+</ul></li>
+</ul>
+<blockquote>
+<p>L’article <a href="https://www.tidyverse.org/articles/2017/12/workflow-vs-script/">Project-oriented workflow</a> du <a href="https://www.tidyverse.org">Tidyverse</a> revient sur ces deux points.</p>
+</blockquote>
+<ul>
+<li><strong>Conserver tous les fichiers sources d’un projet dans un répertoire</strong></li>
+</ul>
+<p>Lorsque vous travaillez sur un projet, éviter autant que possible de référer à des éléments d’un autre projet. Tout le nécessaire d’un projet doit être dans le dossier du projet.</p>
+<ul>
+<li><strong>Mettre en place une arborescence simple et claire du projet</strong>
+<ul>
+<li>Séparer les données (dans un dossier <strong>data</strong> par exemple) de vos scripts sources</li>
+<li>Mettre les fonctions dans des fichiers séparés</li>
+<li>Utiliser un fichier qui appelle toutes les librairies que vous utilisez (si vous avez plusieurs fichiers de scripts).</li>
+<li>Avoir un fichier de config (si besoin)</li>
+</ul></li>
+<li><strong>Faire des packages quand on veut réutiliser du code entre projet</strong></li>
+</ul>
+<p>Un package R suit une structure bien définie. Ainsi, tout ce que vous avez développé est accessible via des fonctions avec des aides appropriées. Le système de packages vous permet donc d’avoir des fonctions, de la documentation (vignettes et pages d’aide) et garantie une bonne portabilité de vos travaux (si tous les contrôles sont bien fait) entre projet.</p>
+<blockquote>
+<p>Pour vous aider à construire des packages, voici quelques ressources en ligne : le livre <a href="http://r-pkgs.had.co.nz/">R packages</a> de <em>Hadley Wickham</em> et l’article <a href="https://thinkr.fr/creer-package-r-quelques-minutes/">Créer un package R en quelques minutes</a> du <a href="https://thinkr.fr/">thinkr</a>.</p>
+</blockquote>
+</div>
+<div id="lisibilité-du-code" class="section level2">
+<h2>Lisibilité du code</h2>
+<ul>
+<li><strong>Bien indenter son code</strong></li>
+</ul>
+<p>Un code bien indenté est facile à lire. Un raccourci pour indenter une ligne de code est <strong>Ctrl +I</strong>. Pour reformater un script en entier, utilisez <strong>Ctrl+Shift+A</strong>.</p>
+<ul>
+<li><strong>Commenter son code</strong></li>
+</ul>
+<p>Utile même si vous travaillez seul. Vous vous retrouver plus facilement si vous reprenez votre projet plusieurs mois après. Pour rajouter un commentaire il vous suffit de rajouter <strong>#</strong> avant votre commentaire (ou en raccourci <strong>Ctrl+Shift+C</strong>)</p>
+<ul>
+<li><strong>Mettre des sections dans votre code</strong></li>
+</ul>
+<p>Votre code n’en sera que plus aéré, agréable et facile à lire. Le raccourci pour mettre une section est <strong>Ctrl+Shift+R</strong>.</p>
+<ul>
+<li><strong>Utiliser les <strong>Snippets</strong> s’ils existent</strong></li>
+</ul>
+<p>Les snippets sont des bouts de code préenregistrés qui vous aident dans la structuration d’un module. Pour les utiliser il suffit de commencer par écrire la fonction/module et il vous sera proposé un snippet s’il en existe.
+Quelques snippets:</p>
+<ul>
+<li><code>fun</code> : génère l’arborescence pour écrire une fonction,</li>
+<li><code>shinyApp</code>: génère une arborescence avec le minimum pour faire une appli shiny</li>
+<li><code>if</code>, <code>el</code>, and <code>ei</code> pour les expressions conditionnelles</li>
+<li>…</li>
+</ul>
+<p>  Pour avoir la liste des snippets par défauts aller dans <strong><em>Tools&gt;Global Option&gt;Code</em></strong> puis cliquer sur <strong>Edit Snippets …</strong>.
+Vous pouvez modifier/rajouter des snippets en modifiant/rajoutant ce qu’il vous faut dans l’interface qui s’est ouverte. Pour en savoir plus: <a href="https://support.rstudio.com/hc/en-us/articles/204463668-Code-Snippets">Code Snippets</a></p>
+<blockquote>
+<p>Pour avoir plus de conseils n’hésitez pas à lire <a href="https://csgillespie.github.io/efficientR/">Efficient R programming</a> de <em>Colin Gillespie &amp; Robin Lovelace</em> et plus précisément le chapitre <a href="https://csgillespie.github.io/efficientR/collaboration.html">Efficient collaboration</a>.</p>
+</blockquote>
+<blockquote>
+<p>Le livre <a href="http://adv-r.had.co.nz/">Advanced R</a> de <em>Hadley Wickham</em> est aussi très intéressant pour améliorer vos compétences sur la programmation fonctionnelle, la performance de vos scripts …</p>
+</blockquote>
+</div>
+</div>
