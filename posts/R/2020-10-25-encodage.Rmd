@@ -35,12 +35,12 @@ Au fil des années plusieurs encodages ont été créés.  Un a finalement réus
 
 Suivant le système d'exploitation que vous utilisez, l'encodage par défaut n'est pas le même.  
 
-Par exemple, les systèmes d'exploitation  __Linux__ utilisent en général par défaut l'encodage __UTF-8__. Par contre sous Windows l'encodage par défaut est généralement __Windows 1252__. 
+Par exemple, les systèmes d'exploitation  __Linux__ utilisent en général par défaut l'encodage __UTF-8__. Par contre sous Windows (en France) l'encodage par défaut est généralement __Windows 1252__. 
 
 
 # L'encodage sur Linux
 
-Si vous travailler avec des VM notamment via des plateformes clous (CGP, AWS, AZURE...), il y a de fortes chances que vous travaillez sous Linux. Par conséquent l'encodage par défaut est __UTF-8__. Ceci implique que lors de l'importation ou de l'exportation des données, les caractères seront encodés par défaut en UTF-8.
+Si vous travailler avec des VM notamment via des plateformes cloud (CGP, AWS, AZURE...), il y a de fortes chances que vous travaillez sous Linux. Par conséquent l'encodage par défaut est __UTF-8__. Ceci implique que lors de l'importation ou de l'exportation des données, les caractères seront encodés par défaut en UTF-8.
 
 # Illustration des problèmes liés à l'encodage sur les données
 

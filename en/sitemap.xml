@@ -1,47 +1,41 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
-    <loc>https://rodrigue.netlify.app/en/categories/</loc>
+    <loc>https://rodrigue.rhodatascience.com/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://rodrigue.netlify.app/categories/"
+                href="https://rodrigue.rhodatascience.com/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://rodrigue.netlify.app/en/categories/"
+                href="https://rodrigue.rhodatascience.com/en/categories/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://rodrigue.netlify.app/en/</loc>
+  </url><url>
+    <loc>https://rodrigue.rhodatascience.com/en/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://rodrigue.netlify.app/"
+                href="https://rodrigue.rhodatascience.com/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://rodrigue.netlify.app/en/"
+                href="https://rodrigue.rhodatascience.com/en/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://rodrigue.netlify.app/en/tags/</loc>
+  </url><url>
+    <loc>https://rodrigue.rhodatascience.com/en/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://rodrigue.netlify.app/tags/"
+                href="https://rodrigue.rhodatascience.com/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://rodrigue.netlify.app/en/tags/"
+                href="https://rodrigue.rhodatascience.com/en/tags/"
                 />
   </url>
-  
 </urlset>

@@ -1,11 +1,18 @@
 ---
-title: "L'encodage de caractère"
+title: "L'encodage de caractère dans Rstudio"
 subtitle: "Comprendre et utiliser l'encodage dans Rstudio"
 author: Rodrigue EDORH
+hero: /images/post-rmarkdown/encodage.jpeg
 date: 2020-10-25
 slug: encoding
 categories: ["R"]
 tags: ["R Markdown"]
+menu:
+  sidebar:
+    name: L'encodage
+    identifier: r-encoding
+    parent: r
+    weight: 115
 ---
 
 
@@ -23,11 +30,11 @@ tags: ["R Markdown"]
 <h1>UTF-8: l’encodage référence</h1>
 <p>Au fil des années plusieurs encodages ont été créés. Un a finalement réussi à regrouper presque tous les langages. Il s’agit de L’<a href="https://fr.wikipedia.org/wiki/Unicode">Unicode</a>. Il y a plusieurs implémentations concrètes d’Unicode. Le plus célèbre est “UTF-8”. L’<a href="https://fr.wikipedia.org/wiki/UTF-8">UTF-8</a> est le seul encodage vers lequel, aujourd’hui, on puisse convertir vers et depuis (pratiquement) toutes les langues au monde.</p>
 <p>Suivant le système d’exploitation que vous utilisez, l’encodage par défaut n’est pas le même.</p>
-<p>Par exemple, les systèmes d’exploitation <strong>Linux</strong> utilisent en général par défaut l’encodage <strong>UTF-8</strong>. Par contre sous Windows l’encodage par défaut est généralement <strong>Windows 1252</strong>.</p>
+<p>Par exemple, les systèmes d’exploitation <strong>Linux</strong> utilisent en général par défaut l’encodage <strong>UTF-8</strong>. Par contre sous Windows (en France) l’encodage par défaut est généralement <strong>Windows 1252</strong>.</p>
 </div>
 <div id="lencodage-sur-linux" class="section level1">
 <h1>L’encodage sur Linux</h1>
-<p>Si vous travailler avec des VM notamment via des plateformes clous (CGP, AWS, AZURE…), il y a de fortes chances que vous travaillez sous Linux. Par conséquent l’encodage par défaut est <strong>UTF-8</strong>. Ceci implique que lors de l’importation ou de l’exportation des données, les caractères seront encodés par défaut en UTF-8.</p>
+<p>Si vous travailler avec des VM notamment via des plateformes cloud (CGP, AWS, AZURE…), il y a de fortes chances que vous travaillez sous Linux. Par conséquent l’encodage par défaut est <strong>UTF-8</strong>. Ceci implique que lors de l’importation ou de l’exportation des données, les caractères seront encodés par défaut en UTF-8.</p>
 </div>
 <div id="illustration-des-problèmes-liés-à-lencodage-sur-les-données" class="section level1">
 <h1>Illustration des problèmes liés à l’encodage sur les données</h1>
